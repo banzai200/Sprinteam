@@ -1,9 +1,10 @@
 import psycopg2
 
-class Conexao(object):
+
+class Conectar(object):
     _db = None
 
-    def __init__(self, mhost, db, usr, pwd, psycopg2=None):
+    def __init__(self, mhost='localhost', db='sprinteam', usr='root', pwd='6337313a8554b899d5edc8f9ec10471204ed2398', psycopg2=None):
         self._db = psycopg2.connect(host=mhost, database=db, user=usr, password=pwd)
 
     def manipular(self, sql):
