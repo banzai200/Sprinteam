@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'Sprinteam.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sprinteam',
-        'USER': 'postgres',
-        'PASSWORD': '6337313a8554b899d5edc8f9ec10471204ed2398',
-        'HOST': '127.0.0.1',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': 'sprinteam_db',
         'PORT': '5432',
     }
 }

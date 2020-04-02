@@ -3,13 +3,30 @@ version: '3.1'
 services:
 
   db:
-    image: postgres
+    image: postgres:12.2
     restart: always
-    environment:
-      POSTGRES_PASSWORD: 6337313a8554b899d5edc8f9ec10471204ed2398
+    container_name: sprinteam_db
+    env_file:
+      - database.env
+    expose:
+      - 5432
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      - db
+
+  web:
+    build: .
+    container_name: sprinteam_web
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    env_file:
+      - database.env
