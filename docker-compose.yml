@@ -8,8 +8,8 @@ services:
     container_name: sprinteam_db
     env_file:
       - database.env
-    expose:
-      - 5432
+    ports:
+      - 5432:5432
 
   adminer:
     image: adminer
