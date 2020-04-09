@@ -1,33 +1,44 @@
 from github import Github
-#Usando um token de acesso
-TOKKEN = ''
-hostName = ''
+from github import GitRelease
 
-git = Github(TOKKEN)
 
-class Repository():
-
+class Git():
+    TOKKEN = ''
+    hostName = ''
+    git = Github(TOKKEN)
 
     def getYourRepository(self):
-        #Pegar o seu repositórios'''
-        # Github Enterprise with custom hostname
-        self.git = Github(base_url=f"https://{hostName}/api/v3", login_or_token=TOKKEN)
+        """Pegar os seus repositórios
+                            Github Enterprise with custom hostname
+                            """
+
+        self.git = Github(base_url=f"https://{self.hostName}/api/v3", login_or_token=self.TOKKEN)
 
     def getRepository(self):
-        #Pegar repositórios pesquisando via  query
-        repositories = git.search_repositories(query='language:python')
-        rep = list
+        """Pegar repositórios pesquisando via  query"""
+        repositories = self.git.search_repositories(query='language:python')
         for repo in repositories:
             print(repo)
 
-    def getFile(self):
-        pass
+    def getBranch(self, query):
+        '''Função destinada para retornar a lista de branchs
 
+         Passar a query, exemplo: "PyGithub/PyGithub"
 
+        Ele retornará uma lista
 
+        '''
+        repo = self.git.get_repo(query)
+        lista = list(repo.get_branches())
 
+        return lista
 
+    def getReleases(self, query):
+        '''Função destinada para retornar os realeses e retornando uma lista'''
+        repo = self.git.get_repo(query)
+        lista = list(repo.get_releases())
 
+        return lista
 
 
 
