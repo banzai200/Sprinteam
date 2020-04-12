@@ -126,6 +126,7 @@ label{
 
 form label{
     text-align: right;
+    margin-bottom: 10px;
 }
 
 .login{
@@ -136,6 +137,10 @@ form label{
     padding: 20px 25px 20px 25px;
     background-color: #65167e;
     border-radius: 15px;
+}
+
+.cadinp{
+    margin-bottom: 10px;
 }
 
 form button ,input[type="submit"]{
@@ -177,7 +182,7 @@ form button ,input[type="submit"]{
     margin-top:10px;
 }
 
-.loginText input[type=text], input[type="password"]{
+.loginText input[type=text], input[type="password"], input[type="email"]{
     margin-top: 10px;
     margin-left: 15px;
     width: 400px;
