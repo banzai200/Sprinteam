@@ -1,4 +1,6 @@
-from Banco import kanban
+from Ferramentas.Api.Git.Instance import Git
 
-kanban.cardcreate('Test', 'Card Testing', 'test', 'Guy Testing', 'tomorrow', '6')
+Git.TOKEN = '7d5b3c8143c58995e4e32bbd45ea643fbf4887f9'
+Git.hostName = 'Sprinteam'
 
+main = git.git()
