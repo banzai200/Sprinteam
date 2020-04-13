@@ -4,7 +4,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends mime-support po
 
 WORKDIR /usr/src/app
 
-RUN pip install Django==3.0.5 psycopg2>=2.5.4 PyGithub
+COPY requirements.txt /usr/src/app/
+
+RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
