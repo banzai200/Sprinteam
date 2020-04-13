@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': 'sprinteam_db',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
