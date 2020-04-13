@@ -1,6 +1,9 @@
-from Ferramentas.Api.Git.Instance import Git
+from calendar_api.calendar_api import google_calendar_api
+import json
 
-Git.TOKEN = '7d5b3c8143c58995e4e32bbd45ea643fbf4887f9'
-Git.hostName = 'Sprinteam'
+calendar = google_calendar_api()
 
-main = git.git()
+calendar.create_event(calendar_id='guedes48@gmail.com',
+                      start='2020-04-14T14:00:00-03:00',
+                      end='2020-04-14T15:00:00-03:00',
+                      desc='Test')
