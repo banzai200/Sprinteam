@@ -16,7 +16,10 @@
                 <div class="grouppick">{{ board.b_name }}</div>
                 <div class="grouppick">Board 2</div>
             </div>
-            <div class="fswitchbar"></div>
+            <div class="fswitchbar">
+                <!-- Will add the proper switches-->
+                <div class="teampick" onclick="location.href='tasks.html'"></div>
+            </div>
 
         </div>
         <div class="right">
@@ -26,7 +29,7 @@
                     <div class="flexcol">
                         <div class="flexrow">
                             <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>
-                            <div class="bdsearch">Pesquisar... <img></div>
+                            <div class="bdsearch">Pesquisar... <img src="{% static "images/search.png" %}"></div>
                         </div>
                         <div class="descbox flexcol">
                             <div class="desctext">{{board.b_description}}</div>
@@ -36,25 +39,9 @@
                     <div id="bscore" class="bdround">{{board.b_points}}</div>
                 </div>
             </div>
-            <div class="flexcol">
-                <div class="ccateg">Categoria 1</div>
-                <div class="categbg">
-                    <div class="card">
-                        <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
-                        <div class="cdesc">Descrição do Post-It</div>
-                        <div class="cardfbox">
-                            <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
-                        </div>           
-                    </div>
-                    <div class="card">
-                        <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
-                        <div class="cdesc">Descrição do Post-It</div>
-                        <div class="cardfbox">
-                            <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
-                        </div>           
-                    </div>
-                </div>    
-            </div>
+            {%block categories %}
+            
+            {% endblock categories %}
         </div>
     </div>
     </body>
