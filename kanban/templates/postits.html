@@ -1,0 +1,61 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+    </head>
+    <body>
+    <div class="wholething">
+        <div class="left">
+            <div class="teamselect">
+                <div class="flexrow">
+                    <div class="teampick">{{ team.t_name }}</div>
+                </div>
+            </div>
+            <div class="groupselect">
+                <div class="grouppick">{{ board.b_name }}</div>
+                <div class="grouppick">Board 2</div>
+            </div>
+            <div class="fswitchbar"></div>
+
+        </div>
+        <div class="right">
+            <div class="topbar">
+                <div class="flexrow">
+                    <div id="bicon" class="bdround">icone da board</div>
+                    <div class="flexcol">
+                        <div class="flexrow">
+                            <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>
+                            <div class="bdsearch">Pesquisar... <img></div>
+                        </div>
+                        <div class="descbox flexcol">
+                            <div class="desctext">{{board.b_description}}</div>
+                            <div class="desctopics">#{{board.b_topics}}</div>
+                        </div>
+                    </div>
+                    <div id="bscore" class="bdround">{{board.b_points}}</div>
+                </div>
+            </div>
+            <div class="flexcol">
+                <div class="ccateg">Categoria 1</div>
+                <div class="categbg">
+                    <div class="card">
+                        <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
+                        <div class="cdesc">Descrição do Post-It</div>
+                        <div class="cardfbox">
+                            <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
+                        </div>           
+                    </div>
+                    <div class="card">
+                        <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
+                        <div class="cdesc">Descrição do Post-It</div>
+                        <div class="cardfbox">
+                            <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
+                        </div>           
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
