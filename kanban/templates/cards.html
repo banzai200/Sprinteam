@@ -1,0 +1,17 @@
+{% extends "categories.html" %}
+{% block cards %}
+    <div class="card">
+        <div class="cardfbox">
+            <div class="ctitle">{{ card.c_name }}</div>
+            <div class="pscore">{{card.c_complexity}}</div>
+        </div>
+        <div class="cdesc">{{card.c_description}}</div>
+        <div class="cardfbox">
+            <div class="cresp">{{card.c_assigned}}</div>
+            {% for c_topic in card%}
+                <div class="ctopic">{{ card.c_topic }}</div>
+            {% endfor %}
+            <div class="cdeadline">{{ card.c_deadline }}</div>
+        </div>           
+    </div>
+{% endblock cards %}
