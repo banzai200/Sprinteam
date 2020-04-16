@@ -5,3 +5,9 @@ google-api-python-client~=1.8.0
 datefinder~=0.7.0
 credentials~=1.1
 apiclient
+pickle
+datetime
+credentials
+datefinder
+google.protobuf
+apiclient.discovery

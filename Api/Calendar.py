@@ -5,7 +5,6 @@ https://developers.google.com/calendar/v3/reference/events/insert
 
 """
 
-
 import pickle
 from datetime import timezone, timedelta
 import credentials as credentials

@@ -8,12 +8,13 @@ from github import Github
 
 class Git:
 
-    def __init__(self, TOKEN, host):
+    def __init__(self, TOKEN):
+        """Método construtor"""
 
         self.TOKEN = TOKEN
-        self.host = host
+
     def git(self):
-        git = Github(base_url=f"https://{self.host}/api/v3", login_or_token=self.TOKEN)
+        git = Github(self.TOKEN)
         return git
 
     def getRepository(self):
@@ -37,4 +38,14 @@ class Git:
 
         return lista
 
-    
+
+if __name__ == '__main__':
+    TOKEN = '7d5b3c8143c58995e4e32bbd45ea643fbf4887f9'
+
+    git = Git(TOKEN)
+
+    branch = git.getBranch('PyGithub/PyGithub')
+
+    for i in branch:
+
+        print(i)
