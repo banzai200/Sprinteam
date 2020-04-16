@@ -89,6 +89,7 @@ label{
         padding-top: 6px;
         font-size: 14px;
     }
+
     .groupselect{
         display:flex;
         flex-direction: column;
@@ -226,6 +227,13 @@ form button ,input[type="submit"]{
         font-size: 24px;
     }
 
+    .tasksearch img{
+        margin-top: 5px;
+        width:25px;
+        height:25px;
+        text-align: right;
+    }
+
     .taskremind{
         box-sizing: border-box;
         width: 248px;
@@ -281,6 +289,13 @@ form button ,input[type="submit"]{
         border-radius: 5px;
         padding-left: 5px;
         padding-top: 3px;
+    }
+
+    .bdsearch img{
+        margin-top: 5px;
+        width:15px;
+        height:15px;
+        text-align: right;
     }
 
     .descbox{

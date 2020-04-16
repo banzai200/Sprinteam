@@ -1,11 +1,6 @@
-from Sprinteam.Api.Git import Git
-TOKEN = '7d5b3c8143c58995e4e32bbd45ea643fbf4887f9'
-hostName = 'Sprinteam'
+from Ferramentas.Api.Git.Instance import Git
 
-git = Git(TOKEN, hostName)
+Git.TOKEN = '7d5b3c8143c58995e4e32bbd45ea643fbf4887f9'
+Git.hostName = 'Sprinteam'
 
-b = git.getBranch('PyGithub/PyGithub')
-
-for i in b:
-
-    print(i)
+main = git.git()

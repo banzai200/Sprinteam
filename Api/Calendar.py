@@ -10,11 +10,8 @@ import pickle
 from datetime import timezone, timedelta
 import credentials as credentials
 import datefinder
-import flow as flow
-from calendar_api.calendar_api import scopes
 from google.protobuf import service
 from apiclient.discovery import build
-from  google_auth_oauthlib.flow import InstalledAppFlow
 
 
 """Para a criação do envento no Google Calendar, é necessário executar algumas etapas.
@@ -31,7 +28,7 @@ https://console.developers.google.com/
 Este comando execuatdo no Jupyter, o levará para para a página do google para gerar o Token de acesso
 scopes = [' https://www.googleapis.com/auth/calendar' ]
 
-flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", scopes=scopes)
+flow = InstalledAppFlow.from_client_secrets_file("calender_key.json", scopes=scopes)
 credentials = flow.run_console()
 """
 
@@ -96,7 +93,7 @@ def create_event(start_time_str, summary, duration=1, attendees=None, descriptio
     return service.events().insert(calendarId='primary', body=event, sendNotifications=True).execute()
 
 
-def createEvent():
+def createevent():
 
     event = {
         'summary': 'Google I/O 2015',

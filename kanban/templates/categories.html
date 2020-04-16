@@ -1,0 +1,15 @@
+{% extends "postsits.html" %}
+
+{% block categories %}
+<div class="flexcol">
+{% for categorie in cat_board %}
+    <div class="ccateg">{{ categorie.catname }} </div>
+    <div class="categbg">
+        {% for card in boar.b_name}
+            {% block cards %}
+            {% endblock cards %}
+        {% endfor %}
+    </div>
+{% endfor %} 
+</div>
+{% endblock categories %}
