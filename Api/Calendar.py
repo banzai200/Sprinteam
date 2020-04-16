@@ -5,7 +5,7 @@ https://developers.google.com/calendar/v3/reference/events/insert
 
 """
 
-import calendar
+
 import pickle
 from datetime import timezone, timedelta
 import credentials as credentials
@@ -27,11 +27,6 @@ https://console.developers.google.com/
 > Gerar o arquivo.jason
 > pip instalar google-api python-cliente
 > Authorizing Requests to the Google Calendar API (https://developers.google.com/calendar/auth)
-"""
-
-
-
-"""
 
 Este comando execuatdo no Jupyter, o levará para para a página do google para gerar o Token de acesso
 scopes = [' https://www.googleapis.com/auth/calendar' ]
