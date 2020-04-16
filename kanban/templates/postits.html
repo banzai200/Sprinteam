@@ -1,8 +1,9 @@
 <!DOCTYPE HTML> 
 <html>
     <head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+        <script src="{% static "js/mainscripts.js" }"></script>
     </head>
     <body>
     <div class="wholething">
@@ -39,9 +40,13 @@
                     <div id="bscore" class="bdround">{{board.b_points}}</div>
                 </div>
             </div>
-            {%block categories %}
-            
-            {% endblock categories %}
+            <div class="board">
+                {% block  details %}
+                {% endblock details %}
+
+                {% block categories %}
+                {% endblock categories %}
+            </div>
         </div>
     </div>
     </body>

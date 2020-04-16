@@ -257,7 +257,8 @@ form button ,input[type="submit"]{
     .remind3{
         background-color: #2F80ED;
     }
-    /*cards*/
+
+    /* Cards */
     .bdround{
         width: 85px;
         height: 80px;
@@ -308,6 +309,12 @@ form button ,input[type="submit"]{
         box-sizing: border-box;
         padding-left:10px;
         padding-top: 3px;
+    }
+
+    .board{
+        height:100%;
+        width: 100%;
+        z-index: 1;
     }
 
     .ccateg{
@@ -390,7 +397,7 @@ form button ,input[type="submit"]{
 
     .ctopic{
         width: auto;
-        max-width:100 px;
+        max-width:100px;
         height: 27px;
         margin-left: 10px;
         background-color: #BBB9B9;
@@ -411,37 +418,37 @@ form button ,input[type="submit"]{
         padding-left:10px;
         padding-right:10px;
     }
+    /* Card Highlight*/
+        .chighbg{
+            color:white;
+            background:rgba(0, 0, 0, 1);
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            display:none;
+            z-index: 2;
+        }
 
-/*to treat
-position: absolute;
-width: 1093px;
+        .chighlight{
+            color:black;
+            border-radius: 5px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+            padding: 20px;
+            width: 500px;
+            height:auto;
+        }
 
-left: 357px;
-background-color: #C66E6E;    
+        .chbigfield{
+            font-size: 16px;
+            margin-bottom:15px;
+        }
 
---group picker
+        .chbigfield label{
+            opacity:100%;
+        }
 
-left: 24px;
-top: 170px;
-
---texto do nomegrupo
-left 10 top 6
-
---organizando
-
-
-
-
-
-
-
-
-
-
-width: 35px;
-height: 35px;
-left: 28px;
-top: 136px;
-
-background: url(user.png);
-*/
+        .chdesc{
+            width: 300px;
+            height:auto;
+        }
