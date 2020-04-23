@@ -26,7 +26,7 @@ label{
 }
 .right{
     position: absolute;
-    width: 1017px;
+    width: -moz-available;
     height: 100%;
     left: 347px;
     top: 0px;
@@ -196,6 +196,7 @@ form button ,input[type="submit"]{
 
 .topbar{
     height: 108px;
+    width: available;
     background-color: #C66E6E;
 }
     /*tasks*/
@@ -312,7 +313,7 @@ form button ,input[type="submit"]{
     }
 
     .board{
-        height:100%;
+        height: max-content;
         width: 100%;
         z-index: 1;
     }

@@ -19,9 +19,6 @@ class Users(models.Model):
     u_admin = models.IntegerField(default=0)
     u_team = models.ForeignKey(Teams, on_delete=models.CASCADE, default='')
 
-    def __str__(self):
-        return self.u_name
-
 
 class Boards(models.Model):
     b_name = models.CharField(max_length=40)
@@ -30,17 +27,11 @@ class Boards(models.Model):
     b_points = models.IntegerField(default=0)
     b_team = models.ForeignKey(Teams, on_delete=models.CASCADE, default='')
 
-    def __str__(self):
-        return self.b_name
-
 
 class Lists(models.Model):
     list_name = models.CharField(max_length=30)
     list_position = models.IntegerField()
     list_board = models.ForeignKey(Boards, on_delete=models.CASCADE, default='')
-
-    def __str__(self):
-        return self.list_name
 
 
 class Cards(models.Model):
@@ -52,14 +43,8 @@ class Cards(models.Model):
     c_complexity = models.IntegerField(default=1)
     c_list = models.ForeignKey(Lists, on_delete=models.CASCADE, default='')
 
-    def __unicode__(self):
-        return self.c_name
-
 
 class Categories(models.Model):
     cat_name = models.CharField(max_length=20)
     cat_board = models.ForeignKey(Boards, on_delete=models.CASCADE, default='')
-
-    def __str__(self):
-        return self.cat_name
 

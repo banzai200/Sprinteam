@@ -2,11 +2,8 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.views import View
 from django.views.generic import ListView, DetailView
-
 from kanban.forms import SignUpForm
-from .models import Teams
-from .models import Boards
-from .models import Cards
+from .models import Teams, Categories, Boards, Cards, Lists
 
 
 def auth(request):
@@ -29,7 +26,12 @@ def cad(request):
 
 
 def kanban(request):
-    return render(request, 'postits.html')
+    team = get_object_or_404(Teams, pk='1')
+    board = get_object_or_404(Boards, pk='1')
+    lists = get_list_or_404(Lists)
+    cards = Cards.objects.select_related('c_list')
+    context = {'team': team, 'board': board, 'list_board': lists, 'card_list': cards}
+    return render(request, 'cards.html', context)
 
 
 def tasks(request):

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/html">
     <head>
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
-        <script src="{% static "js/mainscripts.js" %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <script src="{% static 'js/mainscripts.js' %}"></script>
     </head>
     <body>
     <div class="wholething">
@@ -30,7 +30,7 @@
                     <div class="flexcol">
                         <div class="flexrow">
                             <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>
-                            <div class="bdsearch">Pesquisar... <img src="{% static "images\search.png" %}"></div>
+                            <div class="bdsearch">Pesquisar... <img src="{% static 'images\search.png' %}"></div>
                         </div>
                         <div class="descbox flexcol">
                             <div class="desctext">{{board.b_description}}</div>
@@ -41,11 +41,11 @@
                 </div>
             </div>
             <div class="board">
-                {% block  details %}
-                {% endblock details %}
-
                 {% block categories %}
                 {% endblock categories %}
+
+                {% block  details %}
+                {% endblock details %}
             </div>
         </div>
     </div>
