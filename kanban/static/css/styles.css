@@ -91,8 +91,6 @@ label{
     }
 
     .groupselect{
-        display:flex;
-        flex-direction: column;
         height:100%;
         padding-top: 41px;
         background-color: #DD8989;
@@ -394,11 +392,12 @@ form button ,input[type="submit"]{
         top: 97px;
         border-radius:50%;
         background-color: #BBB9B9;
+        overflow:hidden;
     }
 
     .ctopic{
         width: auto;
-        max-width:100px;
+        max-width:150px;
         height: 27px;
         margin-left: 10px;
         background-color: #BBB9B9;
@@ -418,6 +417,8 @@ form button ,input[type="submit"]{
         padding-top: 5px;
         padding-left:10px;
         padding-right:10px;
+        text-align: center;
+        overflow:hidden;
     }
     /* Card Highlight*/
         .chighbg{
