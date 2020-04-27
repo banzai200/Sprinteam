@@ -6,22 +6,14 @@
 </head>
 <body>
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-        {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
+<ul>
+{% for li in list_board %}
+    {% for list in li.cards_set.all %}
+
+        {{ list.c_name }}
     {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+{% endfor %}
+</ul>
 {% endblock %}
 </body>
 </html>

@@ -1,8 +1,7 @@
 <!-- adicionar um jeito de enviar um objeto ou detalhe que possa ser utilizado para pescar os dados do card selecionado-->
 {% extends "categories.html" %}
 {% block cards %}
-{% for card in card_list %}
-
+    {% for card in lists.cards_set.all %}
     <div class="card" onclick="showCard()">
         <div class="cardfbox">
             <div class="ctitle">{{ card.c_name }}</div>
@@ -10,10 +9,12 @@
         </div>
         <div class="cdesc">{{card.c_description}}</div>
         <div class="cardfbox">
-            <div class="cresp">{{card.c_assigned}}</div>
+            {% for card_user in card.users.all %}
+            <div class="cresp">{{card_user.u_name}}</div>
+            {% endfor %}
                 <div class="ctopic">{{ card.c_topic }}</div>
             <div class="cdeadline">{{ card.c_deadline }}</div>
         </div>           
     </div>
-{% endfor %}
+    {% endfor %}
 {% endblock cards %}

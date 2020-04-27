@@ -30,6 +30,7 @@ def kanban(request):
     board = get_object_or_404(Boards, pk='1')
     lists = get_list_or_404(Lists)
     cards = Cards.objects.select_related('c_list')
+    lists = Lists.objects.all()
     context = {'team': team, 'board': board, 'list_board': lists, 'card_list': cards}
     return render(request, 'cards.html', context)
 
