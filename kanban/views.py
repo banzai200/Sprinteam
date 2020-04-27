@@ -26,13 +26,11 @@ def cad(request):
 
 
 def kanban(request):
-    team = get_object_or_404(Teams, pk='1')
-    board = get_object_or_404(Boards, pk='1')
+    team = get_list_or_404(Teams)
+    board = get_list_or_404(Boards)
     lists = get_list_or_404(Lists)
-    cards = Cards.objects.select_related('c_list')
-    lists = Lists.objects.all()
-    context = {'team': team, 'board': board, 'list_board': lists, 'card_list': cards}
-    return render(request, 'cards.html', context)
+    context = {'team': team, 'board': board, 'list_board': lists}
+    return render(request, 'kanban/cards.html', context)
 
 
 def tasks(request):
@@ -43,4 +41,4 @@ class Details(DetailView):
     def get(self, request,  *args, **kwargs):
         card = get_object_or_404(Cards, pk=kwargs['pk'])
         context = {'card': card}
-        return render(request, 'details.html', context)
+        return render(request, 'kanban/details.html', context)

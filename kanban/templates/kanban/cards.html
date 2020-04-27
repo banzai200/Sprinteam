@@ -1,5 +1,5 @@
 <!-- adicionar um jeito de enviar um objeto ou detalhe que possa ser utilizado para pescar os dados do card selecionado-->
-{% extends "categories.html" %}
+{% extends "kanban/categories.html" %}
 {% block cards %}
     {% for card in lists.cards_set.all %}
     <div class="card" onclick="showCard()">
