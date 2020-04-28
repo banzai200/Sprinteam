@@ -1,0 +1,20 @@
+{% extends "kanban/postits.html" %}
+{% block details %}
+    <div id="cardDetail" class="chighbg flexcol">
+        <div onclick="showCard()" style="text-align:right;">X</div>
+        <div class="chighlight flexcol">
+            <div class="chbigfield flexrow">
+                <label>{{ card.c_name }}<</label>
+                <label style="margin-left:20px;"> P-Score: {{card.c_complexity}}</label>
+            </div>
+            <div class="flexrow chbigfield">
+                <label>Responsável: </label><div class="cresp">{{card.c_assigned}}</div>
+                <div class="cdeadline">{{ card.c_deadline }}</div>
+            </div>
+            <div class="chdesc chbigfield"> {{card.c_description}}</div>
+            <div class="flexrow">
+                    <div class="ctopic">{{ card.c_topic }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock details %}

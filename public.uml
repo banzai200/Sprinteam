@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>02bb21b8-200e-450c-b69e-185941aa6af4.SCHEMA:sprinteam.public</OriginalElement>
+  <nodes>
+    <node x="237.00000000000003" y="568.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_cards</node>
+    <node x="0.0" y="1576.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_session</node>
+    <node x="202.00000000000003" y="394.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_lists</node>
+    <node x="737.0231481481482" y="1372.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group_permissions</node>
+    <node x="0.0" y="1315.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_admin_log</node>
+    <node x="968.0231481481483" y="829.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_migrations</node>
+    <node x="83.75000000000003" y="174.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_boards</node>
+    <node x="555.2777777777778" y="1372.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_groups</node>
+    <node x="313.0" y="1372.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_user_permissions</node>
+    <node x="330.0" y="174.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_users</node>
+    <node x="0.0" y="405.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_categories</node>
+    <node x="212.27777777777783" y="829.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_content_type</node>
+    <node x="206.75" y="0.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_teams</node>
+    <node x="220.50000000000003" y="980.0">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user</node>
+    <node x="540.7453703703704" y="1060.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_permission</node>
+    <node x="757.7453703703704" y="1083.5">02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_permission" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_content_type">
+      <point x="0.0" y="-62.0" />
+      <point x="639.2453703703704" y="955.0" />
+      <point x="353.2777777777778" y="955.0" />
+      <point x="47.0" y="50.5" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_user_permissions" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_permission">
+      <point x="53.5" y="-50.5" />
+      <point x="473.5" y="1295.0" />
+      <point x="589.9953703703704" y="1295.0" />
+      <point x="-49.25" y="62.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group_permissions" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group">
+      <point x="46.5" y="-50.5" />
+      <point x="876.5231481481482" y="1295.0" />
+      <point x="877.7453703703704" y="1295.0" />
+      <point x="40.0" y="39.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_cards" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_lists">
+      <point x="-71.25" y="-108.0" />
+      <point x="308.25" y="543.0" />
+      <point x="292.5" y="543.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_groups" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group">
+      <point x="36.0" y="-50.5" />
+      <point x="663.2777777777778" y="1295.0" />
+      <point x="797.7453703703704" y="1295.0" />
+      <point x="-40.0" y="39.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_categories" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_boards">
+      <point x="0.0" y="-50.5" />
+      <point x="91.0" y="369.0" />
+      <point x="137.75000000000003" y="369.0" />
+      <point x="-54.0" y="85.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_admin_log" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user">
+      <point x="73.25" y="-108.0" />
+      <point x="219.75" y="1295.0" />
+      <point x="269.16666666666674" y="1295.0" />
+      <point x="-97.33333333333331" y="142.5" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_boards" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_teams">
+      <point x="-2.8421709430404007E-14" y="-85.0" />
+      <point x="191.75" y="149.0" />
+      <point x="256.25" y="149.0" />
+      <point x="-49.5" y="62.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_groups" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user">
+      <point x="-36.0" y="-50.5" />
+      <point x="591.2777777777778" y="1285.0" />
+      <point x="463.83333333333337" y="1285.0" />
+      <point x="97.33333333333337" y="142.5" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_group_permissions" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_permission">
+      <point x="-46.5" y="-50.5" />
+      <point x="783.5231481481482" y="1285.0" />
+      <point x="688.4953703703704" y="1285.0" />
+      <point x="49.25" y="62.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_lists" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_boards">
+      <point x="0.0" y="-62.0" />
+      <point x="292.5" y="369.0" />
+      <point x="245.75000000000003" y="369.0" />
+      <point x="54.0" y="85.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_users" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_teams">
+      <point x="0.0" y="-85.0" />
+      <point x="430.0" y="149.0" />
+      <point x="355.25" y="149.0" />
+      <point x="49.5" y="62.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_cards" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_users">
+      <point x="71.25" y="-108.0" />
+      <point x="450.75" y="543.0" />
+      <point x="430.0" y="543.0" />
+      <point x="0.0" y="85.0" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user_user_permissions" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.auth_user">
+      <point x="-53.5" y="-50.5" />
+      <point x="0.0" y="142.5" />
+    </edge>
+    <edge source="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_admin_log" target="02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.django_content_type">
+      <point x="-73.25" y="-108.0" />
+      <point x="73.25" y="955.0" />
+      <point x="259.2777777777778" y="955.0" />
+      <point x="-47.0" y="50.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5773718326458456" x="615.0000000000001" y="240.66391100224536" />
+  <SelectedNodes>
+    <node>02bb21b8-200e-450c-b69e-185941aa6af4.TABLE:sprinteam.public.kanban_teams</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

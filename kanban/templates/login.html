@@ -1,0 +1,31 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+    </head>
+    <body>
+    <div class="wholething">
+        <div class="left">
+            
+        </div>
+        <div class="right logbg">
+            <label></label>
+            <form class="flexcol login" action="kanban/postits.html">
+                <div class="loginText">
+                    <img src="{% static "images/user.png" %}"> <input type="text" name="user" required>
+                </div>
+                <label>Esqueceu o usuário?</label>
+                <div class="loginText">
+                    <img src="{% static "images/key.png" %}"> <input type="password" name="passw" required>
+                </div>
+                <label>Esqueceu a senha?</label>
+                <div class="flexrow">
+                    <input type="submit" class="logbutton" value="ENTRAR">
+                    <button type="button" class="cadbutton" onclick="location.href='cad.html'">CADASTRO</button>
+                </div>
+            </form>
+        </div>    
+    </div>
+    </body>
+</html>

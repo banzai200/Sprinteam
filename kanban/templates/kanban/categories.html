@@ -1,0 +1,15 @@
+{% extends "kanban/postits.html" %}
+{% block categories %}
+
+
+{% for lists in list_board %}
+    {% block content %}
+        <div class="ccateg">{{ lists.list_name }} </div>
+        <div class="categbg">
+                {% block cards %}
+                {% endblock cards %}
+        </div>
+    {% endblock content %}
+{% endfor %}
+
+{% endblock categories %}

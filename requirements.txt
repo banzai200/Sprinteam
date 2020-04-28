@@ -1,0 +1,9 @@
+Django==3.0.5
+psycopg2-binary
+PyGithub
+google-api-python-client~=1.8.0
+datefinder~=0.7.0
+credentials~=1.1
+apiclient
+datetime
+protobuf

@@ -1,4 +1,3 @@
-from Banco import kanban
+from Sprinteam import Git
 
-kanban.cardcreate('Test', 'Card Testing', 'test', 'Guy Testing', 'tomorrow', '6')
 

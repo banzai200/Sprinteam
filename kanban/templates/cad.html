@@ -1,0 +1,31 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+    </head>
+    <body>
+    <div class="wholething">
+        <div class="left">
+            
+        </div>
+        <div class="right logbg">
+            <label></label>
+            <form class="flexcol login" action="login.html">
+                <div class="loginText cadinp">
+                    <img src="{% static "images/user.png" %}"> <input type="text" name="user" placeholder="usuário..." required>
+                </div>
+                <div class="loginText cadinp">
+                    <img src="{% static "images/mail.png" %}"> <input type="email" name="mail" placeholder="e-mail..." required>
+                </div>
+                <div class="loginText cadinp">
+                    <img src="{% static "images/key.png" %}"> <input type="password" name="passw" placeholder="senha..." required>
+                </div>
+                <div class="flexrow">
+                    <input type="submit" class="logbutton" value="CADASTRAR">
+                </div>
+            </form>
+        </div>    
+    </div>
+    </body>
+</html>

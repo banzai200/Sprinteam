@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<ul>
+{% for li in list_board %}
+    {% for list in li.cards_set.all %}
+
+        {{ list.c_name }}
+    {% endfor %}
+{% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

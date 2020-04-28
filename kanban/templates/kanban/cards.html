@@ -1,0 +1,20 @@
+<!-- adicionar um jeito de enviar um objeto ou detalhe que possa ser utilizado para pescar os dados do card selecionado-->
+{% extends "kanban/categories.html" %}
+{% block cards %}
+    {% for card in lists.cards_set.all %}
+    <div class="card" onclick="showCard()">
+        <div class="cardfbox">
+            <div class="ctitle">{{ card.c_name }}</div>
+            <div class="pscore">{{card.c_complexity}}</div>
+        </div>
+        <div class="cdesc">{{card.c_description}}</div>
+        <div class="cardfbox">
+            {% for card_user in card.users.all %}
+            <div class="cresp">{{card_user.u_name}}</div>
+            {% endfor %}
+                <div class="ctopic">{{ card.c_topic }}</div>
+            <div class="cdeadline">{{ card.c_deadline }}</div>
+        </div>           
+    </div>
+    {% endfor %}
+{% endblock cards %}
