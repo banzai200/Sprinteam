@@ -8,5 +8,5 @@ urlpatterns = [
     path('cad', views.cad, name='cadastro'),
     path('tasks', views.tasks, name='tasks'),
     path('board/<slug:pk>', views.kanban, name='kanban'),
-    path('kanban/detail/<int:pk>/', views.Details.as_view(), name='detail'),
+    path('board/detail/<int:pk>/', views.Details.as_view(), name='detail'),
 ]
