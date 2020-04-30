@@ -63,6 +63,19 @@
             margin-left: 30px;
             background-color: blue; /*just using this for setup now*/
         }
+            .progtitle{
+                width:auto;
+                height:auto;
+            }
+            .proggraph{
+                width: 135px; 
+                height: 135px;
+            }
+            .progtext{
+                width: 245px;
+                height: 65px;
+                margin-left: 25px;
+            }
         .metricshlmembers{
             width: 435px;
             height: 160px;
