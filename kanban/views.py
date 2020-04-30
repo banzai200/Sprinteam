@@ -25,11 +25,12 @@ def cad(request):
     return render(request, 'testing.html', {'form': form})
 
 
-def kanban(request):
+def kanban(request, *args, **kwargs):
     team = get_list_or_404(Teams)
-    board = get_list_or_404(Boards)
+    board_list = get_list_or_404(Boards)
+    board = get_object_or_404(Boards, b_name=kwargs['pk'].capitalize())
     lists = get_list_or_404(Lists)
-    context = {'team': team, 'board': board, 'list_board': lists}
+    context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list}
     return render(request, 'kanban/cards.html', context)
 
 
