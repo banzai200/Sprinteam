@@ -38,6 +38,10 @@ def tasks(request):
     return render(request, 'tasks.html')
 
 
+def metrics(request):
+    return render(request, 'base.html')
+
+
 class Details(DetailView):
     def get(self, request,  *args, **kwargs):
         card = get_object_or_404(Cards, pk=kwargs['pk'])
