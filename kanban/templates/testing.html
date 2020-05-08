@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html>
 <body>
-{% block content %}
-<ul>
-{% for li in list_board %}
-    {% for list in li.cards_set.all %}
-
-        {{ list.c_name }}
+<form>
+  <label for="cars">Choose a Repo:</label>
+  <select id="repo" name="repo">
+    {% for option in git %}
+    <option value="{{ option }}">{{ option }}</option>
     {% endfor %}
-{% endfor %}
-</ul>
-{% endblock %}
+  </select>
+  <input type="submit">
+</form>
+
 </body>
 </html>
