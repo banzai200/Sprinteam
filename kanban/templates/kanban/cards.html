@@ -12,7 +12,7 @@
             {% for card_user in card.users.all %}
             <div class="cresp">{{card_user.u_name}}</div>
             {% endfor %}
-                <div class="ctopic">{{ card.c_topic }}</div>
+                <div class="ctopic">#{{ card.c_topic }}</div>
             <div class="cdeadline">{{ card.c_deadline }}</div>
         </div>           
     </div>

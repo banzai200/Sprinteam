@@ -1,9 +1,9 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/betastyles.css" %}">
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css' %}">
         <!-- favicons -->
             <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
             <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
@@ -23,23 +23,12 @@
             <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
             <meta name="theme-color" content="#ffffff">
         <!-- favicon end-->
+        <script src="{% static 'js/mainscripts.js' %}"></script>
+        <title>Sprinteam</title>
     </head>
     <body style="background-color: #804C90">
-        <div class="logcadbg" style="background-image:url("{% static "images/bg.jpg" %}")>
-            <form class="flexcol login" style="align-items:center" method="POST">
-                <img src="{% static "images/sprintshoes.png" %}" width=100px>
-                <div style="color:white;font-size 24px">Bem vindo ao Sprinteam!</div>
-                <div class="logcadText">
-                    <img src="{% static "images/user.png" %}"> <input type="text" name="user" required>
-                </div>
-                <div class="logcadText">
-                    <img src="{% static "images/key.png" %}"> <input type="password" name="passw" required>
-                </div>
-                <div class="flexrow">
-                    <input type="submit" class="logbutton" value="ENTRAR" style="margin-right:10px">
-                    <button type="button" class="cadbutton" onclick="location.href='cad.html'">CADASTRO</button>
-                </div>
-            </form>
+        <div class="logcadbg" style="background-image:url({% static 'images/bg.jpg' %})">
+
         </div>
     </body>
 </html>

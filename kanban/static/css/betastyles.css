@@ -45,7 +45,7 @@
                 background-color: #C4C4C4;
             }
 .rightarea{
-    width:100%;
+    width:-moz-available;
     height: 100%;
     background-color: #814646;
 }
@@ -107,3 +107,57 @@
             background-color: #79AAD7;
             border-radius: 15px;
         }
+/*login/cad stuff*/
+.logcadbg{
+    width:100%;
+    height:100%;
+    opacity: 0.25;
+    background-size: cover;
+}
+.logcadText{
+    width: 500px;
+    height: 54px;
+    background-color: #804c90;
+    box-sizing: border-box;
+    border-radius: 15px 0 0 15px;
+    display:flex;
+    flex-direction:row;
+    }
+
+.logcadText img{
+    width: 30px;
+    height: 30px;
+    margin-left:18px;
+    margin-top:12px;
+}
+
+.logcadText input[type=text], input[type="password"], input[type="email"]{
+    margin-top: 7px;
+    margin-left: 15px;
+    width: 430px;
+    height: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-top: 7px;
+    font-size: 24px;
+    color:rgba(0, 0, 0, .75);
+    border:none;
+}
+.logcadbg form button ,input[type="submit"]{
+    border-radius:15px;
+    height:60px;
+    width: 205px;
+    font-size:28px;
+    box-sizing: border-box;
+    border:none;
+    text-align: center;
+    color:#FFFFFF;
+    background-color: #804c90;
+}
+button:hover{
+    cursor:pointer;
+}
+.cadmarg{
+    margin-bottom: 15px !important;
+}
