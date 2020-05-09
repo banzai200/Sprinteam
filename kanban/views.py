@@ -22,7 +22,7 @@ def cad(request):
             return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, 'testing.html', {'form': form})
+    return render(request, 'cad.html', {'form': form})
 
 
 def kanban(request, *args, **kwargs):

@@ -3,7 +3,7 @@
     <head>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css' %}">
         <!-- favicons -->
             <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
             <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
@@ -27,16 +27,20 @@
     <body style="background-color: #804C90">
         <div class="logcadbg" style="background-image:url("{% static "images/bg.jpg" %}")>
             <form class="flexcol login" style="align-items:center" method="POST">
+                {% csrf_token %}
                 <img src="{% static "images/sprintshoes.png" %}" width=100px>
                 <div style="color:white;font-size: 24px;margin-bottom:10px">Acelere com o Sprinteam!</div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/user.png" %}"> <input type="text" name="user">
+                    <img src="{% static "images/user.png" %}"> {{ form.username }}
                 </div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/key.png" %}"> <input type="password" name="passw">
+                    <img src="{% static "images/key.png" %}"> {{ form.password1 }}
                 </div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/mail.png" %}"> <input type="email" name="mail">
+                    <img src="{% static "images/key.png" %}"> {{ form.password2 }}
+                </div>
+                <div class="logcadText cadmarg" style="margin-bottom:10px !important">
+                    <img src="{% static "images/mail.png" %}"> {{ form.email }}
                 </div>
                 <div class="flexrow">
                     <input type="submit" class="logbutton" value="CADASTRAR">
