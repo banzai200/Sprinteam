@@ -7,6 +7,7 @@ from . import gitfunc
 
 
 def auth(request):
+
     return render(request, 'login.html')
 
 

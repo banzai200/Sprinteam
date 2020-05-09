@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sprinteam.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/board/coronga'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
