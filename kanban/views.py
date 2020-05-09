@@ -1,9 +1,9 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
-from django.views import View
 from django.views.generic import ListView, DetailView
 from kanban.forms import SignUpForm
 from .models import Teams, Categories, Boards, Cards, Lists
+from . import gitfunc
 
 
 def auth(request):
@@ -37,6 +37,15 @@ def kanban(request, *args, **kwargs):
 def tasks(request):
     return render(request, 'tasks.html')
 
+
+def metrics(request):
+    return render(request, 'base.html')
+
+
+def git(request):
+    list = gitfunc.getrepos()
+    context = {'git': list}
+    return render(request, 'testing.html', context)
 
 class Details(DetailView):
     def get(self, request,  *args, **kwargs):
