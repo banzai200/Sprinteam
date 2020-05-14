@@ -26,63 +26,16 @@
         <script src="{% static 'js/mainscripts.js' %}"></script>
     </head>
     <body>
-        <div class="wholething">
-
+        <div class="flexrow">
             <div class="leftarea flexcol">
                 <div class="topleft"></div>
-                <div class="sectionpicker flexrow">
-                    <div class="section othersection"></div>
-                    <div class="section"></div>
-                </div>
-                <div class="sectioncontent">
-                    <div class="bdgrouptitle"></div>
-                    <div class="bdgroupbg flexcol">
-                        <div class="bdgroupboard"></div>
-                        <div class="bdgroupboard"></div>
-                    </div>
-                </div>
-                <div class="bdpick"></div>
+                {% block leftcontent %}
+                {% endblock leftcontent%}               
             </div>
-
             <div class="rightarea flexcol">
-                <div class="metrics flexrow">
-                    <div class="metricshlcards flexcol">
-                        <span>Easiest task so far</span>
-                        <span>Hardest task so far</span>
-                    </div>
-                    <div class="flexcol">
-                        <div class="metricsprog flexcol">
-                            <div class="prog title">Your progress is displayed here</div>
-                            <div class="flexrow">
-                                <div class="proggraph"></div>
-                                <div class="progtext">
-                                    <span>You're x% done!</span>
-                                    <span>Keep up the progress!</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="metricshlmembers">
-                            <div class="hlmember"></div>
-                            <div class="hlmember"></div>
-                            <div class="hlmember"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="taskpreviews flexrow">
-                    <div class="task flexcol">
-                        <span>Task Title</span>
-                        <div class="flexrow">
-                            <div class="cresp">Eo</div>
-                            <span>Responsible ratings: xy</span>
-                            <span>#tags #they #got</span>
-                        </div>
-                        <div class="flexrow">
-                            <div class="ceadline">hoje</div>
-                            <div class="taskdeadline">Random Preview</div>
-                    </div>
-                </div>
-            </div>
-
+                {% block rightcontent %}
+                {% endblock rightcontent%}
+            </div>        
         </div>
     </body>
 </html>

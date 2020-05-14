@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block leftcontent %}
+{% endblock leftcontent %}
+
+{% block rightcontent %}
+    <!-- The Metrics -->
+        <div class="metrics flexrow">
+            <div class="metricsprog flexcol">
+                <span class="metricstitle">Your progress is displayed here</span>
+                <div class="flexrow">
+                    <div class="proggraph"></div>
+                    <p class="progtext">You're x% done!<br>
+                        Keep up the good work!</p>
+                </div>
+                <p>Highlighted members</p>
+                <div class="metricshlmembers flexrow">
+                    <div class="hlmember"></div>
+                    <div class="hlmember"></div>
+                    <div class="hlmember"></div>
+                </div>
+            </div>
+            <div class="metricshlcards flexcol">
+                <p>Easiest task so far</p>
+                <div class="card" onclick="showCard()">
+                    <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
+                    <div class="cdesc">Descrição do Post-It</div>
+                    <div class="cardfbox">
+                        <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
+                    </div>           
+                </div>
+                <p>Hardest task so far</p>
+                <div class="card" onclick="showCard()">
+                    <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
+                    <div class="cdesc">Descrição do Post-It</div>
+                    <div class="cardfbox">
+                        <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    <!-- The tasks -->
+        <div class="taskpreviews flexrow">
+            <div class="task flexcol">
+                <div>Task Title</div>
+                <div class="flexrow">
+                    <div class="cresp">Eo</div>
+                    <span>Responsible ratings: xy<br>
+                        #tags #they #got</span>
+                </div>
+                <div class="flexrow" style="justify-content:center">
+                    <div class="ceadline">hoje</div>
+                    <div class="taskdeadline">Random Preview</div>
+            </div>
+        </div>   
+{% endblock rightcontent %}
