@@ -23,7 +23,7 @@
             <meta name="theme-color" content="#ffffff">
         <!-- favicon end-->
         <script src="{% static 'js/mainscripts.js' %}"></script>
-        <title>{{ board.b_name }} | Sprinteam</title>
+        <title>    {% block title %}{{ board.b_name }}{% endblock %} | Sprinteam</title>
     </head>
     <body>
     {% csrf_token %}

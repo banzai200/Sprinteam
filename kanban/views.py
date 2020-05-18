@@ -7,10 +7,6 @@ from .models import Teams, Categories, Boards, Cards, Lists
 from . import gitfunc
 
 
-def auth(request):
-
-    return render(request, 'login.html')
-
 
 def cad(request):
     if request.method == 'POST':
@@ -31,7 +27,7 @@ def cad(request):
 def kanban(request, *args, **kwargs):
     team = get_list_or_404(Teams)
     board_list = get_list_or_404(Boards)
-    board = get_object_or_404(Boards, b_name=kwargs['pk'].capitalize(), )
+    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
     lists = get_list_or_404(Lists)
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list}
     return render(request, 'kanban/cards.html', context)
@@ -43,7 +39,7 @@ def tasks(request):
 
 @login_required(login_url='/')
 def metrics(request):
-    return render(request, 'base.html')
+    return render(request, 'metrics/metrics.html')
 
 
 def git(request):
@@ -52,9 +48,12 @@ def git(request):
     return render(request, 'testing.html', context)
 
 
-class Details(DetailView):
-    @login_required(login_url='/')
-    def get(self, request,  *args, **kwargs):
-        card = get_object_or_404(Cards, pk=kwargs['pk'])
-        context = {'card': card}
-        return render(request, 'kanban/details.html', context)
+@login_required(login_url='/')
+def Details(request,  *args, **kwargs):
+    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
+    card = get_object_or_404(Cards, pk=kwargs['pk'])
+    team = get_list_or_404(Teams)
+    board_list = get_list_or_404(Boards)
+    lists = get_list_or_404(Lists)
+    context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'card': card}
+    return render(request, 'kanban/details.html', context)

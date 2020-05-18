@@ -427,7 +427,6 @@ form button ,input[type="submit"]{
             height: 100%;
             width: 100%;
             position:absolute;
-            display:none;
             z-index: 2;
         }
 

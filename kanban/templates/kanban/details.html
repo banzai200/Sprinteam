@@ -1,4 +1,5 @@
-{% extends "kanban/postits.html" %}
+{% extends "kanban/cards.html" %}
+{% block title %}{{ card.c_name }}{% endblock %}
 {% block details %}
     <div id="cardDetail" class="chighbg flexcol">
         <div onclick="showCard()" style="text-align:right;">X</div>
