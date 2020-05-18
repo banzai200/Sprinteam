@@ -2,7 +2,7 @@
 {% block title %}{{ card.c_name }}{% endblock %}
 {% block details %}
     <div id="cardDetail" class="chighbg flexcol">
-        <div onclick="showCard()" style="text-align:right;">X</div>
+       <div onclick="location='{% url "kanban" board.b_name %}'" style="text-align:right;">X</div>
         <div class="chighlight flexcol">
             <div class="chbigfield flexrow">
                 <label>{{ card.c_name }}<</label>

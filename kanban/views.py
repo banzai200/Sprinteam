@@ -7,7 +7,6 @@ from .models import Teams, Categories, Boards, Cards, Lists
 from . import gitfunc
 
 
-
 def cad(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -21,6 +20,10 @@ def cad(request):
     else:
         form = SignUpForm()
     return render(request, 'cad.html', {'form': form})
+
+
+def boards(request):
+    return render(request, 'baselog.html')
 
 
 @login_required(login_url='/')
