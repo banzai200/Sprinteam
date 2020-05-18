@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% block leftcontent %}
+    <div class="sectionpicker flexrow">
+        <div class="section othersection" onclick="location.href='kanban/postits.html'"></div>
+        <div class="section"></div>
+    </div>
+    <div class="sectioncontent">
+        <div class="bdmarg">
+            <div class="bdgrouptitle"></div>
+            <div class="bdgroupbg flexcol">
+                <div class="bdgroupboard"></div>
+                <div class="bdgroupboard"></div>
+            </div>
+        </div>
+        <div class="bdpick bdmarg"></div>
+    </div>
 {% endblock leftcontent %}
 
 {% block rightcontent %}

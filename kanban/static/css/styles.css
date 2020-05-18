@@ -26,7 +26,7 @@ label{
 }
 .right{
     position: absolute;
-    width: -moz-available;
+    width: 1017px;
     height: 100%;
     left: 347px;
     top: 0px;
@@ -91,6 +91,8 @@ label{
     }
 
     .groupselect{
+        display:flex;
+        flex-direction: column;
         height:100%;
         padding-top: 41px;
         background-color: #DD8989;
@@ -129,32 +131,30 @@ form label{
 }
 
 .login{
-    margin-top: 15%;
-    margin-left:150px;
-    width:500px;
-    height:auto;
-    padding: 20px 25px 20px 25px;
+    position: absolute;
+    left:25%;
+    top:25%;
+    width:800px;
+    height:400px;
+    padding: 15px;
     background-color: #65167e;
     border-radius: 15px;
 }
-
-.cadinp{
-    margin-bottom: 10px;
+.logcadbg{
+    width:100%;
+    height:100%;
+    background:url('fundo.jpg');
+    background-color: #65167e;
 }
 
 form button ,input[type="submit"]{
-    border-radius:10px;
-    height:75px;
-    width: auto;
-    font-size:45px;
+    border-radius:15px;
+    height:60px;
+    width: 205px;
+    font-size:28px;
     box-sizing: border-box;
-    padding-top: 5px;
-    padding-left: 10px;
+    border:none;
     text-align: center;
-    margin-left: 10px;
-}
-
-.cadbutton{
     color:#FFFFFF;
     background-color: #804c90;
 }
@@ -166,35 +166,40 @@ form button ,input[type="submit"]{
 
 .loginText{
     width: 500px;
-    height: 75px;
-    background-color: #3f0b50;
+    height: 54px;
+    background-color: #804c90;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 15px 0 0 15px;
     display:flex;
     flex-direction:row;
+    margin-bottom: 30px;
     }
-
+.cadmarg{
+    margin-bottom: 15px !important;
+}
 .loginText img{
-    width: 50px;
-    height: 50px;
-    margin-left:15px;
-    margin-top:10px;
+    width: 30px;
+    height: 30px;
+    margin-left:18px;
+    margin-top:12px;
 }
 
 .loginText input[type=text], input[type="password"], input[type="email"]{
-    margin-top: 10px;
+    margin-top: 7px;
     margin-left: 15px;
-    width: 400px;
-    height: 50px;
-    border-radius: 0px 10px 10px 0px;
+    width: 430px;
+    height: 40px;
+    border-radius: 10px;
     box-sizing: border-box;
     padding-left: 5px;
-    font-size: 30px;
+    padding-top: 7px;
+    font-size: 24px;
+    color:rgba(0, 0, 0, .75);
+    border:none;
 }
 
 .topbar{
     height: 108px;
-    width: available;
     background-color: #C66E6E;
 }
     /*tasks*/
@@ -311,7 +316,7 @@ form button ,input[type="submit"]{
     }
 
     .board{
-        height: max-content;
+        height:100%;
         width: 100%;
         z-index: 1;
     }
@@ -392,12 +397,11 @@ form button ,input[type="submit"]{
         top: 97px;
         border-radius:50%;
         background-color: #BBB9B9;
-        overflow:hidden;
     }
 
     .ctopic{
         width: auto;
-        max-width:150px;
+        max-width:100px;
         height: 27px;
         margin-left: 10px;
         background-color: #BBB9B9;
@@ -417,8 +421,6 @@ form button ,input[type="submit"]{
         padding-top: 5px;
         padding-left:10px;
         padding-right:10px;
-        text-align: center;
-        overflow:hidden;
     }
     /* Card Highlight*/
         .chighbg{
