@@ -31,16 +31,27 @@
                 <img src="{% static "images/sprintshoes.png" %}" width=100px>
                 <div style="color:white;font-size: 24px;margin-bottom:10px">Acelere com o Sprinteam!</div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/user.png" %}"> {{ form.username }}
+                    <img src="{% static "images/user.png" %}"><p>   Nome</p>
+                    {{ form.first_name }}
                 </div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/key.png" %}"> {{ form.password1 }}
+                    <img src="{% static "images/user.png" %}"><p>   Usuário</p>
+                    {{ form.username }}
                 </div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/key.png" %}"> {{ form.password2 }}
+                    <img src="{% static "images/mail.png" %}">
+                    <p>   E-Mail</p>
+                    {{ form.email }}
                 </div>
                 <div class="logcadText cadmarg" style="margin-bottom:10px !important">
-                    <img src="{% static "images/mail.png" %}"> {{ form.email }}
+                    <img src="{% static "images/key.png" %}">
+                    <p>   Senha</p>
+                    {{ form.password1 }}
+                </div>
+                <div class="logcadText cadmarg" style="margin-bottom:10px !important">
+                    <img src="{% static "images/key.png" %}">
+                    <p>   Confirmação</p>
+                    {{ form.password2 }}
                 </div>
                 <div class="flexrow">
                     <input type="submit" class="logbutton" value="CADASTRAR">

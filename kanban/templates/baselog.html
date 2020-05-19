@@ -21,7 +21,7 @@
             <!-- Aqui você adapta a exibição pra mostrar todas as boards existentes -->
             <div class="flexcol" style="margin-left:30px">
                 {% for b in board_list %}
-                <div class="grouppick">{{ b.b_name }}</div>
+                <div class="grouppick" onclick="location='{% url "kanban" b.b_name %}'">{{ b.b_name }}</div>
                 {% endfor %}
             </div>
         </div>

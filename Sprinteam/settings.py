@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sprinteam.wsgi.application'
 
-LOGIN_REDIRECT_URL = '/board/coronga'
+LOGIN_REDIRECT_URL = '/boards'
 LOGOUT_REDIRECT_URL = '/'
 
 # Database

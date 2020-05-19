@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager
-
+from django.contrib.auth.models import User
 # Montar tabelas do banco de dados como classe aqui.
 # Sugerido olhar na documentação como cada tipo de dado traduz para o banco de dados
 # Create your models here.
@@ -13,7 +12,7 @@ class Teams(models.Model):
 
 
 class Users(models.Model):
-    u_name = models.CharField(max_length=40)
+    u_name = models.OneToOneField(User, on_delete=models.CASCADE)
     u_username = models.CharField(max_length=80)
     u_email = models.CharField(max_length=80)
     u_admin = models.IntegerField(default=0)

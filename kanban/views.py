@@ -8,22 +8,27 @@ from . import gitfunc
 
 
 def cad(request):
+    team_list = get_list_or_404(Teams)
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            username.initial = 'Username'
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, 'cad.html', {'form': form})
+    return render(request, 'cad.html', {'form': form, 'team_list': team_list})
 
 
+@login_required(login_url='/')
 def boards(request):
-    return render(request, 'baselog.html')
+    board_list = get_list_or_404(Boards)
+    context = {'board_list': board_list}
+    return render(request, 'baselog.html', context)
 
 
 @login_required(login_url='/')
