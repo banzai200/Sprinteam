@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+
+{% block headcontent%}
+    <title>Métricas | Sprinteam</title>
+{% endblock headcontent%}
+
 {% block leftcontent %}
     <div class="sectionpicker flexrow">
-        <div class="section othersection" onclick="location.href='kanban/postits.html'"></div>
+        <div class="section othersection" onclick="location.href='kanban/boarddisplay.html'"></div>
         <div class="section"></div>
     </div>
     <div class="sectioncontent">
@@ -64,6 +69,7 @@
                 <div class="flexrow" style="justify-content:center">
                     <div class="ceadline">hoje</div>
                     <div class="taskdeadline">Random Preview</div>
+                </div>
             </div>
         </div>   
 {% endblock rightcontent %}

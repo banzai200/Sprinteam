@@ -24,8 +24,11 @@
             <meta name="theme-color" content="#ffffff">
         <!-- favicon end-->
         <script src="{% static 'js/mainscripts.js' %}"></script>
+        {% block headcontent %}
+        {% endblock headcontent %}
     </head>
     <body>
+    {% csrf_token %}
         <div class="flexrow">
             <div class="leftarea flexcol">
                 <div class="topleft"></div>

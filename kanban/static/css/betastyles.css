@@ -1,74 +1,10 @@
 /*In this file we have styles that are still being tested*/
-body{
-    margin:0;
-    height:100%;
-    font-size: 18px;
-}
+
 .flexrow{
     display:flex;
     flex-direction: row;
 }
-.leftarea{
-    box-sizing: border-box;
-    padding: 0;
-    width: 205px;
-    height: 100vh;
-    background-color: #4F4F4F;
-}
-    .topleft , .sectionpicker{
-        height:57px;
-        width:100%;
-    }
-    .sectionpicker{
-        background-color: #C4C4C4;
-        padding-left: 4px;
-        width:100%;
-        box-sizing: border-box;
-    }
-    .section{
-        width: 90px;
-        height:57px;
-        background-color: #65167E;
-    }
-    .othersection{
-        background-color: #3F0B50 !important;
-    }
-    .sectioncontent{
-        box-sizing: border-box;
-        background-color: #65167E;
-        width:100%;
-        height:100%;
-        padding-left: 3px;
-        padding-right: 3px;
-        padding-top: 35px;
-        padding-bottom: 10px;
-    }
-        .bdmarg{
-            margin-bottom: 10px;
-        }
-        .bdgrouptitle, .bdpick{
-            width:182px;
-            height:50px;
-            background-color: #C4C4C4;
-            border-radius: 5px;
-        }
-        .bdgroupbg{
-            margin-left: 8px;
-            padding-top: 5px;
-            padding-bottom: 10px;
-            width: 168px;
-            height: auto;
-            background-color: #848484;
-            /*display:none;  será implementado em testes */
-        }
-            .bdgroupboard{
-                border-radius:5px;
-                margin-top: 5px;
-                margin-left: 9px;
-                width: 148px;
-                height: 40px;
-                background-color: #C4C4C4;
-            }
+
 .rightarea{
     width:100%;
     height: 100vh;
@@ -77,7 +13,7 @@ body{
 }
     .metrics{
         width: 875px;
-        height: 410px;
+        height: 500px;
         margin-top: 40px;
         margin-bottom: 35px;
         background-color: #65167E;
@@ -125,8 +61,8 @@ body{
         height:auto;
     }
         .task{
-            width:280px;
-            height:140px;
+            width:300px;
+            height:150px;
             border-radius: 15px;
             padding-left: 10px;
             padding-top: 10px;
@@ -138,66 +74,12 @@ body{
             margin-bottom: 10px;
         }
         .taskdeadline{
-            width: 120px;
+            width: 150px;
             box-sizing: border-box;
-            padding-top:7px;
+            padding-top:3px;
             height: 35px;
             background-color: #79AAD7;
             border-radius: 15px;
             text-align: center;
             font-size:16px;
         }
-/*login/cad stuff*/
-.logcadbg{
-    width:100%;
-    height:100%;
-    opacity: 0.25;
-    background-size: cover;
-}
-.logcadText{
-    width: 500px;
-    height: 54px;
-    background-color: #804c90;
-    box-sizing: border-box;
-    border-radius: 15px 0 0 15px;
-    display:flex;
-    flex-direction:row;
-    }
-
-.logcadText img{
-    width: 30px;
-    height: 30px;
-    margin-left:18px;
-    margin-top:12px;
-}
-
-.logcadText input[type=text], input[type="password"], input[type="email"]{
-    margin-top: 7px;
-    margin-left: 15px;
-    width: 430px;
-    height: 40px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding-left: 5px;
-    padding-top: 7px;
-    font-size: 24px;
-    color:rgba(0, 0, 0, .75);
-    border:none;
-}
-.logcadbg form button ,input[type="submit"]{
-    border-radius:15px;
-    height:60px;
-    width: 205px;
-    font-size:28px;
-    box-sizing: border-box;
-    border:none;
-    text-align: center;
-    color:#FFFFFF;
-    background-color: #804c90;
-}
-button:hover{
-    cursor:pointer;
-}
-.cadmarg{
-    margin-bottom: 15px !important;
-}
