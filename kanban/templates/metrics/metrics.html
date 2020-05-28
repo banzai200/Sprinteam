@@ -6,7 +6,7 @@
 
 {% block leftcontent %}
     <div class="sectionpicker flexrow">
-        <div class="section othersection" onclick="location.href='kanban/boarddisplay.html'"></div>
+        <div class="section othersection" onclick="location='{% url "kanban" board.b_name%}'"></div>
         <div class="section"></div>
     </div>
     <div class="sectioncontent">

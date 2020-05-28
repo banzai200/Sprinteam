@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from positions import PositionField
 # Montar tabelas do banco de dados como classe aqui.
 # Sugerido olhar na documentação como cada tipo de dado traduz para o banco de dados
 # Create your models here.
@@ -24,6 +25,7 @@ class Boards(models.Model):
     b_description = models.CharField(max_length=500)
     b_topics = models.CharField(max_length=10)
     b_points = models.IntegerField(default=0)
+    b_icon = models.CharField(max_length=500, default='images/deficon.png')
     b_team = models.ForeignKey(Teams, on_delete=models.CASCADE, default='')
 
 
@@ -40,6 +42,7 @@ class Cards(models.Model):
     c_assigned = models.ForeignKey(Users, on_delete=models.CASCADE, default='')
     c_deadline = models.DateTimeField('deadline')
     c_complexity = models.IntegerField(default=1)
+    c_position = PositionField()
     c_list = models.ForeignKey(Lists, on_delete=models.CASCADE, default='')
 
 
