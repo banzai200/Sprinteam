@@ -7,13 +7,13 @@
 
 .rightarea{
     width:100%;
-    height: 100vh;
+    height: 100%;
     background-color: #3F0B50;
     padding-left: 10px;
 }
     .metrics{
-        width: 875px;
-        height: 500px;
+        width: 850px;
+        height: 425px;
         margin-top: 40px;
         margin-bottom: 35px;
         background-color: #65167E;
@@ -81,5 +81,5 @@
             background-color: #79AAD7;
             border-radius: 15px;
             text-align: center;
-            font-size:16px;
+            font-size:12px;
         }

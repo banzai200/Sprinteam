@@ -1,0 +1,56 @@
+<!--
+{% extends "base.html" %}
+{% block headcontent %}
+    <title>Criar Board| Sprinteam</title>
+{% endblock headcontent %}
+
+{% block leftcontent %}
+    <div class="sectionpicker flexrow">
+        <div class="section"></div>
+        <div class="section othersection" onclick="location.href='metrics/metrics.html'"></div>
+    </div>
+    <div class="sectioncontent">
+        {% for b in board_list %}
+                <div class="bdpick bdmarg">{{ b.b_name }}</div>
+        {% endfor %}
+    </div>
+{% endblock leftcontent %}
+
+{% block rightcontent %}
+    <div class="rightarea">
+        <div class="topbar">
+            <div class="flexrow">
+                <div class="bdicon">board icon</div>
+                <div class="flexcol">
+                    <div class="flexrow">
+                        <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>
+                        <div class="bdsearch">Pesquisar... <img src="{% static 'images\search.png' %}"></div>
+                    </div>
+                    <div class="descbox flexcol">
+                        <div class="desctext">{{board.b_description}}</div>
+                        <div class="desctopics">#{{board.b_topics}}</div>
+                    </div>
+                </div>
+                <div class="bdscore">0 / <br> / {{board.b_points}}</div>
+            </div>
+        </div>
+        <div class="board">
+            {% block categories %}
+            {% endblock categories %}
+            
+            {% block  details %}
+            {% endblock details %}
+        </div>
+    </div>
+{% endblock rightcontent %}
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="design/styles.css">
+    </head>
+    <body>
+        
+    </body>
+</html>
