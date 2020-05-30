@@ -10,6 +10,50 @@
     height: 100vh;
     background-color: #3F0B50;
 }
+    .expandmenu{
+        width:55px;
+        height:50px;
+        padding-left: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background-color:rgb(68, 44, 77);
+    }
+        .expanded{
+            width: 280px !important;
+        }
+        .expmenuexpbut{
+            margin-top: 7.5px;
+            width:35px;
+            height:35px;
+            box-sizing: border-box;
+            padding-top: 5px;
+            border-radius: 50%;
+        }
+            .expmenuexpbut img{
+                width:15px;
+                height:20px;
+                opacity: 0.5;
+            }
+        .expmenubuts{
+            text-align: center;
+            margin-top: 5px;
+            width:45px;
+            height:40px;
+            box-sizing: border-box;
+            padding-top: 2.5px;
+            border-radius: 10px;
+        }
+            .expmenubuts img{
+                width:35px;
+                height:35px;
+                opacity:0.5px;
+            }
+        .expmenuexpbut, .expmenubuts{
+            background-color: #65167E;
+            text-align: center;
+            box-sizing: border-box;
+        }
     .metrics{
         width: 850px;
         height: 425px;
