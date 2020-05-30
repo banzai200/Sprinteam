@@ -33,7 +33,7 @@
             <div class="leftarea flexcol">
                 <div class="topleft">
                     <!-- Botão de logoff-->
-                    <div class="logoff" onclick=""><img src="{% static "images/logoff.png" %}"></div>
+                    <div class="logoff" onclick=location='{% url "logout" %}'><img src="{% static "images/logoff.png" %}"></div>
                 </div>
                 {% block leftcontent %}
                 {% endblock leftcontent%}               

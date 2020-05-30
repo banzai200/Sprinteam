@@ -12,11 +12,10 @@ urlpatterns = [
     path('', login.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout', login.LogoutView.as_view(), name='logout'),
     path('cad', views.cad, name='cadastro'),
-    path('tasks', views.tasks, name='tasks'),
     path('boards', views.boards, name='boards'),
     path('board/<slug:name>', views.kanban, name='kanban'),
     path('board/<slug:name>/detail/<int:pk>/', views.Details, name='detail'),
-    path('metrics', views.metrics, name='metrics'),
+    path('board/<slug:name>/metrics', views.metrics, name='metrics'),
     path('git', views.git, name='git'),
 
 ]

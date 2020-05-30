@@ -7,11 +7,11 @@
 {% block leftcontent %}
     <div class="sectionpicker flexrow">
         <div class="section"></div>
-        <div class="section othersection" onclick="location.href='metrics/metrics.html'"></div>
+        <div class="section othersection" onclick=location="{% url "metrics" board.b_name%}"></div>
     </div>
     <div class="sectioncontent">
         {% for b in board_list %}
-                <div class="bdpick bdmarg">{{ b.b_name }}</div>
+                <div class="bdpick bdmarg" onclick=location="{% url 'kanban' b.b_name %}"><img src="{% static b.b_icon %}" height="50" width="50">{{ b.b_name }}</div>
         {% endfor %}
     </div>
 {% endblock leftcontent %}
@@ -20,7 +20,7 @@
     <div class="rightarea">
         <div class="topbar">
             <div class="flexrow">
-                <div class="bdicon">board icon</div>
+                <div class="bdicon"><img src="{% static board.b_icon %}" height="85" width="85"></div>
                 <div class="flexcol">
                     <div class="flexrow">
                         <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>

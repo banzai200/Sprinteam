@@ -34,20 +34,18 @@ def boards(request):
 @login_required(login_url='/')
 def kanban(request, *args, **kwargs):
     team = get_list_or_404(Teams)
-    board_list = get_list_or_404(Boards)
+    board_list = get_list_or_404(Boards.objects.order_by('id'))
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
-    lists = get_list_or_404(Lists)
+    lists = get_list_or_404(Lists.objects.order_by('list_position'))
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list}
     return render(request, 'kanban/cards.html', context)
 
 
-def tasks(request):
-    return render(request, 'tasks.html')
-
-
 @login_required(login_url='/')
-def metrics(request):
-    return render(request, 'metrics/metrics.html')
+def metrics(request, *args, **kwargs):
+    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
+    context = {'board': board}
+    return render(request, 'metrics/metrics.html', context)
 
 
 def git(request):
