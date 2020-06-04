@@ -50,3 +50,6 @@ class Categories(models.Model):
     cat_name = models.CharField(max_length=20)
     cat_board = models.ForeignKey(Boards, on_delete=models.CASCADE, default='')
 
+class metrics(models.Model):
+    date = models.DateTimeField('finish')
+    complexity = models.IntegerField()
