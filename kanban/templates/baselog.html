@@ -6,23 +6,29 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css' %}">
     </head>
     <body>
-        <div class="flexrow">
-            <!-- Aqui você adapta o form pra fazer criação de boards-->
-            <div class="flexcol">
-                <form method="POST" action="">
+        <div class="boardmake flexcol">
+            <div class="flexrow bdmktopo">
+                <div><img src=""> Sprinteam</div>
+                <div></div>
+                <div>[Usuário]<img></div>
+            </div>
+            <div class="flexrow bdmkmeio">
+                <!-- Aqui você adapta o form pra fazer criação de boards-->
+                
+                <form method="POST" action="" class="flexcol">
                     <input type="text">nome da board
                     <input type="text">descrição da board
                     <input type="text">topicos
                     <input type="text">Score
                     <input type="submit" value="Criar">
                 </form>
-            </div>
 
-            <!-- Aqui você adapta a exibição pra mostrar todas as boards existentes -->
-            <div class="flexcol" style="margin-left:30px">
-                {% for b in board_list %}
-                <div class="grouppick" onclick="location='{% url "kanban" b.b_name %}'">{{ b.b_name }}</div>
-                {% endfor %}
+                <!-- Aqui você adapta a exibição pra mostrar todas as boards existentes -->
+                <div class="flexcol" style="margin-left:30px">
+                    {% for b in board_list %}
+                    <div class="grouppick" onclick="location='{% url "kanban" b.b_name %}'">{{ b.b_name }}</div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </body>

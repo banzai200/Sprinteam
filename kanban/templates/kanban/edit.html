@@ -1,11 +1,12 @@
 {% extends "kanban/cards.html" %}
 {% block title %}{{ card.c_name }}{% endblock %}
 {% block details %}
+    <form method="POST" action="">
     <div id="cardDetail" class="chighbg flexcol" style="align-items: center;">
         <div onclick="location='{% url "kanban" board.b_name %}'" style="text-align:right;">X</div>
         <div class="chighlight flexcol">
             <div class="chbigfield flexrow">
-                <label>{{ card.c_name }}<</label>
+                {{ card.c_name }}
                 <label style="margin-left:20px;"> P-Score: {{card.c_complexity}}</label>
             </div>
             <div class="flexrow chbigfield">
@@ -14,12 +15,12 @@
             </div>
             <div class="chdesc chbigfield"> {{card.c_description}}</div>
             <div class="flexrow">
-                    <div class="ctopic">{{ card.c_topic }}</div>
+                    <textarea class="ctopic" style="border:none">{{ card.c_topic }}</textarea>
             </div>
         </div>
         <div class="flexrow">
-            <button type="button" class="cadbutton" onclick="location.href='edit.html'">EDITAR</button>
-            <button type="button" class="cadbutton" onclick="[EXCLUSÃO VAI AQUI OU VIA JS]">EXCLUIR</button>
+            <button type="submit" class="cadbutton">ATUALIZAR</button>
         </div>
     </div>
+    </form>
 {% endblock details %}

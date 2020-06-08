@@ -136,3 +136,11 @@
             text-align: center;
             font-size:12px;
         }
+/*the board making*/
+.boardmake{
+    width: 800px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #65167E;
+}
