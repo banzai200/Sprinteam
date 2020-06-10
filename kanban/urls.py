@@ -1,12 +1,8 @@
 from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.auth import views as login
-from django.shortcuts import get_object_or_404
 from . import views
-from . import models
 
-
-loginred = get_object_or_404(models.Boards, id=1)
 
 urlpatterns = [
     path('', login.LoginView.as_view(template_name='login.html'), name='login'),

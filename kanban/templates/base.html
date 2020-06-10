@@ -4,6 +4,7 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css' %}">
+
         <!-- favicon -->
             <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
             <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
@@ -24,6 +25,8 @@
             <meta name="theme-color" content="#ffffff">
         <!-- favicon end-->
         <script src="{% static 'js/mainscripts.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        <script src="{% static 'js/chartkick.js' %}"></script>
         {% block headcontent %}
         {% endblock headcontent %}
     </head>

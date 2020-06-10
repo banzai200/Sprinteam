@@ -36,8 +36,10 @@ def boards(request):
 def kanban(request, *args, **kwargs):
     team = get_list_or_404(Teams)
     board_list = get_list_or_404(Boards.objects.order_by('id'))
-    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
-    lists = get_list_or_404(Lists.objects.order_by('list_position'))
+    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize())
+    lists = get_list_or_404(Lists.objects.filter(list_board_id=board.id).order_by('list_position'))
+    if not lists:
+        lists = {'': ''}
     points = Cards.objects.filter(c_list=3).aggregate(Sum('c_complexity'))
     complexity = Cards.objects.aggregate(Sum('c_complexity'))
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'complexity': complexity,
@@ -48,13 +50,26 @@ def kanban(request, *args, **kwargs):
 @login_required(login_url='/')
 def metrics(request, *args, **kwargs):
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
-    hardest = Cards.objects.annotate(Min('c_complexity'))
-    progress = Cards.objects.filter(c_list=1).count() + Cards.objects.filter(c_list=2).count()
-    count = Cards.objects.count()
+    board_list = get_list_or_404(Boards.objects.order_by('id'))
+    hardest = Cards.objects.filter(c_board=board.id).annotate(Min('c_complexity'))
+    if hardest:
+        hardest = hardest[0]
+    easiest = Cards.objects.filter(c_board=board.id).annotate(Max('c_complexity')).order_by('-c_complexity')
+    if easiest:
+        easiest = easiest[0]
+    todo = Cards.objects.filter(c_list=1, c_board=board.id).count()
+    doing = Cards.objects.filter(c_list=2, c_board=board.id).count()
+    done = Cards.objects.filter(c_list=3, c_board=board.id).count()
+    progress = todo + doing
+    count = Cards.objects.filter(c_board=board.id).count()
     avg = count + progress / 2
     calc = count - progress
-    number = calc / avg * 100
-    context = {'board': board, 'progress': progress, 'hardest': hardest[0], 'number': number, 'calc': calc, 'count': count}
+    if avg == 0 & calc == 0:
+        number = 0
+    else:
+        number = calc / avg * 100
+    pie = [['A Fazer', todo], ['Fazendo', doing], ['Feito', done]]
+    context = {'board': board, 'board_list': board_list, 'hardest': hardest, 'easiest': easiest, 'number': number, 'pie': pie}
     return render(request, 'metrics/metrics.html', context)
 
 
@@ -78,7 +93,7 @@ def Details(request,  *args, **kwargs):
 @login_required(login_url='/')
 def Edit(request,  *args, **kwargs):
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize())
-    card = get_object_or_404(Cards, pk=kwargs['pk'])
+    card = get_object_or_404(Cards, pk=kwargs['pk'],)
     team = get_list_or_404(Teams)
     board_list = get_list_or_404(Boards)
     lists = get_list_or_404(Lists)

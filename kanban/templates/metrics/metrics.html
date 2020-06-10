@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+{% load chartkick %}
+{% load static %}
 {% block headcontent%}
     <title>Métricas | Sprinteam</title>
 {% endblock headcontent%}
@@ -10,14 +11,12 @@
         <div class="section"></div>
     </div>
     <div class="sectioncontent">
+
         <div class="bdmarg">
-            <div class="bdgrouptitle"></div>
-            <div class="bdgroupbg flexcol">
-                <div class="bdgroupboard"></div>
-                <div class="bdgroupboard"></div>
-            </div>
+        {% for b in board_list %}
+                <div class="bdpick bdmarg" onclick=location="{% url 'metrics' b.b_name %}"><img src='{% static b.b_icon %}' height="50" width="50">{{ b.b_name }}</div>
+        {% endfor %}
         </div>
-        <div class="bdpick bdmarg"></div>
     </div>
 {% endblock leftcontent %}
 
@@ -27,7 +26,7 @@
             <div class="metricsprog flexcol">
                 <span class="metricstitle">Progresso - {{ board.b_name }}</span>
                 <div class="flexrow">
-                    <div class="proggraph"></div>
+                    <div class="proggraph">{% pie_chart pie %}</div>
                     <p class="progtext">Seu time completou {{ number|floatformat:"0" }}% do projeto!<br>
                         Bom Trabalho, Continue assim!</p>
                 </div>
@@ -41,29 +40,14 @@
                         <div class="ctopic">#{{ hardest.c_topic }}</div><div class="cdeadline">{{ hardest.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
                     </div>           
                 </div>
-                <p>Hardest task so far</p>
+                <p>Tarefa mais complexa até agora</p>
                 <div class="card" onclick="showCard()">
-                    <div class="cardfbox"><div class="ctitle">Título do Post-it</div><div class="pscore">1</div></div>
-                    <div class="cdesc">Descrição do Post-It</div>
+                    <div class="cardfbox"><div class="ctitle">{{ easiest.c_name }}</div><div class="pscore">{{ easiest.c_complexity }}</div></div>
+                    <div class="cdesc">{{ easiest.c_description }}</div>
                     <div class="cardfbox">
-                        <div class="cresp">Ele</div><div class="ctopic">#maneiro</div><div class="cdeadline">Hoje</div>
+                        <div class="ctopic">#{{ easiest.c_topic }}</div><div class="cdeadline">{{ easiest.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
                     </div>           
                 </div>
             </div>
         </div>
-    <!-- The tasks -->
-        <div class="taskpreviews flexrow">
-            <div class="task flexcol">
-                <div>Task Title</div>
-                <div class="flexrow">
-                    <div class="cresp">Eo</div>
-                    <span style="font-size: 12px;">Responsible ratings: xy<br>
-                        #tags #they #got</span>
-                </div>
-                <div class="flexrow centrrow">
-                    <div class="ctaskdeadline">hoje</div>
-                    <div class="taskdeadline">Random Preview</div>
-                </div>
-            </div>
-        </div>   
 {% endblock rightcontent %}
