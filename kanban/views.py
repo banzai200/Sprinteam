@@ -1,7 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.views.generic import ListView, DetailView
-from django.db.models import Sum
+from django.db.models import Sum, Max, Min
 from django.contrib.auth.decorators import login_required
 from kanban.forms import SignUpForm
 from .models import Teams, Categories, Boards, Cards, Lists
@@ -48,7 +48,13 @@ def kanban(request, *args, **kwargs):
 @login_required(login_url='/')
 def metrics(request, *args, **kwargs):
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize(), )
-    context = {'board': board}
+    hardest = Cards.objects.annotate(Min('c_complexity'))
+    progress = Cards.objects.filter(c_list=1).count() + Cards.objects.filter(c_list=2).count()
+    count = Cards.objects.count()
+    avg = count + progress / 2
+    calc = count - progress
+    number = calc / avg * 100
+    context = {'board': board, 'progress': progress, 'hardest': hardest[0], 'number': number, 'calc': calc, 'count': count}
     return render(request, 'metrics/metrics.html', context)
 
 
@@ -67,3 +73,14 @@ def Details(request,  *args, **kwargs):
     lists = get_list_or_404(Lists)
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'card': card}
     return render(request, 'kanban/details.html', context)
+
+
+@login_required(login_url='/')
+def Edit(request,  *args, **kwargs):
+    board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize())
+    card = get_object_or_404(Cards, pk=kwargs['pk'])
+    team = get_list_or_404(Teams)
+    board_list = get_list_or_404(Boards)
+    lists = get_list_or_404(Lists)
+    context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'card': card}
+    return render(request, 'kanban/edit.html', context)

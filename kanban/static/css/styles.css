@@ -210,6 +210,8 @@ button:hover{
                 background-color: #C4C4C4;
                 box-sizing: border-box;
                 padding-top:5px;
+                padding-left: 50px;
+                margin: auto;
             }
             .descbox{
                 width: 838px;
@@ -221,6 +223,7 @@ button:hover{
                 box-sizing: border-box;
                 padding-left:10px;
                 padding-top: 3px;
+                font-size: small;
             }
 
         .board{
