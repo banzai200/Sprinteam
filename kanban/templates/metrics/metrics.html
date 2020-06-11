@@ -33,7 +33,7 @@
             </div>
             <div class="metricshlcards flexcol">
                 <p>Tarefa menos complexa até agora</p>
-                <div class="card" onclick="showCard()">
+                <div class="card" onclick="location='{% url "detail" board.b_name hardest.id %}'">
                     <div class="cardfbox"><div class="ctitle">{{ hardest.c_name }}</div><div class="pscore">{{ hardest.c_complexity }}</div></div>
                     <div class="cdesc">{{ hardest.c_description }}</div>
                     <div class="cardfbox">
@@ -41,7 +41,7 @@
                     </div>           
                 </div>
                 <p>Tarefa mais complexa até agora</p>
-                <div class="card" onclick="showCard()">
+                <div class="card" onclick="location='{% url "detail" board.b_name hardest.id %}'">
                     <div class="cardfbox"><div class="ctitle">{{ easiest.c_name }}</div><div class="pscore">{{ easiest.c_complexity }}</div></div>
                     <div class="cdesc">{{ easiest.c_description }}</div>
                     <div class="cardfbox">

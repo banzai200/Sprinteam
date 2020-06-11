@@ -2,6 +2,7 @@
 {% extends "kanban/categories.html" %}
 {% block cards %}
     {% for card in lists.cards_set.all %}
+        {% if board.id == card.c_board_id %}
     <div class="card" onclick="location='{% url "detail" board.b_name card.id %}'">
         <div class="cardfbox">
             <div class="ctitle">{{ card.c_name }}</div>
@@ -16,5 +17,6 @@
             <div class="cdeadline">{{ card.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
         </div>           
     </div>
+        {% endif %}
     {% endfor %}
 {% endblock cards %}

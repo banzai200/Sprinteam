@@ -12,6 +12,7 @@ urlpatterns = [
     path('board/<slug:name>', views.kanban, name='kanban'),
     path('board/<slug:name>/detail/<int:pk>/', views.Details, name='detail'),
     path('board/<slug:name>/detail/<int:pk>/edit', views.Edit, name='edit'),
+    path('board/<slug:name>/detail/<int:pk>/delete', views.CDelete, name='delete'),
     path('board/<slug:name>/metrics', views.metrics, name='metrics'),
     path('git', views.git, name='git'),
 
