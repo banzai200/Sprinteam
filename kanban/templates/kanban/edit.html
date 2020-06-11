@@ -5,19 +5,14 @@
     <div id="cardDetail" class="chighbg flexcol" style="align-items: center;">
         <div onclick="location='{% url "kanban" board.b_name %}'" style="text-align:right;">X</div>
         <div class="chighlight flexcol">
-            {{ form.card_name.label }}
-            {{ form.card_name }}
-            <label style="margin-left:20px;"> {{ form.card_complexity.label }} {{ form.card_complexity }}</label> 
+            Nome do Card
+            {{ form.c_name }}
+            <label style="margin-left:20px;"> Complexidade do Card {{ form.c_complexity }}</label>
             {# <label>Responsável: </label><div class="cresp">{{card.c_assigned}}</div>#}
-            {{ form.card_deadline.label }} 
-            {{ form.card_deadline }}
-            {{ form.card_description.label }} 
-            {{form.card_description}}
-            {{ form.card_topic.label }}
-            {{ form.card_topic }}
-            <div class="flexrow">
-                <button type="submit" class="cadbutton">ATUALIZAR</button>
-            </div>
+            <div>Deadline do Card {{ form.c_deadline }}</div>
+            <div>Descrição do Card {{form.c_description}}</div>
+            <div>Tópico do Card {{ form.c_topic }}</div>
+            <button type="submit" class="cadbutton">ATUALIZAR</button>
         </div>
     </div>
     </form>
