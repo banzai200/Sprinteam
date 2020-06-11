@@ -1,6 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.views.generic import ListView, DetailView
+from django.http import HttpResponseRedirect
 from django.db.models import Sum, Max, Min
 from django.contrib.auth.decorators import login_required
 from kanban.forms import SignUpForm
@@ -37,13 +38,12 @@ def kanban(request, *args, **kwargs):
     team = get_list_or_404(Teams)
     board_list = get_list_or_404(Boards.objects.order_by('id'))
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize())
-    lists = get_list_or_404(Lists.objects.filter(list_board_id=board.id).order_by('list_position'))
-    if not lists:
-        lists = {'': ''}
+    lists = get_list_or_404(Lists.objects.filter(list_board_id=board.pk).order_by('list_position'))
+    cards = get_list_or_404(Cards)
     points = Cards.objects.filter(c_list=3).aggregate(Sum('c_complexity'))
     complexity = Cards.objects.aggregate(Sum('c_complexity'))
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'complexity': complexity,
-               'points': points}
+               'points': points, 'cards': cards}
     return render(request, 'kanban/cards.html', context)
 
 
@@ -99,3 +99,8 @@ def Edit(request,  *args, **kwargs):
     lists = get_list_or_404(Lists)
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'card': card}
     return render(request, 'kanban/edit.html', context)
+
+
+def CDelete(request, name):
+    Cards.objects.get(id=name).delete()
+    return HttpResponseRedirect('kanban')

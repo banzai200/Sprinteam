@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="flexrow">
-            <button type="button" class="cadbutton" onclick="location.href='edit.html'">EDITAR</button>
-            <button type="button" class="cadbutton" onclick="[EXCLUSÃO VAI AQUI OU VIA JS]">EXCLUIR</button>
+            <button type="button" class="cadbutton" onclick="location='{% url "edit" board.b_name card.id %}'">EDITAR</button>
+            <button type="button" class="cadbutton" onclick="location='{% url  "delete" board.b_name card.id %}'">EXCLUIR</button>
         </div>
     </div>
 {% endblock details %}
