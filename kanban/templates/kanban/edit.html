@@ -9,11 +9,12 @@
             {{ form.card_name }}
             <label style="margin-left:20px;"> {{ form.card_complexity.label }} {{ form.card_complexity }}</label> 
             {# <label>Responsável: </label><div class="cresp">{{card.c_assigned}}</div>#}
-            <div class="cdeadline">{{ form.card_deadline.label }} {{ form.card_deadline }}</div>
-            <div class="chdesc chbigfield">{{ form.card_description.label }} {{form.card_description}}</div>
-            <div class="flexrow">
-                    <div class="ctopic" style="border:none">{{ form.card_topic.label }}{{ form.card_topic }}</div>
-            </div>
+            {{ form.card_deadline.label }} 
+            {{ form.card_deadline }}
+            {{ form.card_description.label }} 
+            {{form.card_description}}
+            {{ form.card_topic.label }}
+            {{ form.card_topic }}
             <div class="flexrow">
                 <button type="submit" class="cadbutton">ATUALIZAR</button>
             </div>
