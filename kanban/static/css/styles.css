@@ -119,10 +119,16 @@ button:hover{
         width: 90px;
         height:57px;
         background-color: #65167E;
+        text-align: center;
     }
     .othersection{
         background-color: #3F0B50 !important;
     }
+        .section img{
+            width:25px;
+            height:25px;
+            margin-top: 3px;
+        }
     .sectioncontent{
         box-sizing: border-box;
         background-color: #65167E;

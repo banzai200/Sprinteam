@@ -6,8 +6,8 @@
 
 {% block leftcontent %}
     <div class="sectionpicker flexrow">
-        <div class="section"></div>
-        <div class="section othersection" onclick=location="{% url "metrics" board.b_name%}"></div>
+        <div class="section"><img src="{% static "images/board.png" %}">Boards</div>
+        <div class="section othersection" onclick=location="{% url "metrics" board.b_name%}"><img src="{% static "images/metrics.png" %}">Metrics</div>
     </div>
     <div class="sectioncontent">
         {% for b in board_list %}
