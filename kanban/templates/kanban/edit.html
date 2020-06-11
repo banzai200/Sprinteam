@@ -5,15 +5,11 @@
     <div id="cardDetail" class="chighbg flexcol" style="align-items: center;">
         <div onclick="location='{% url "kanban" board.b_name %}'" style="text-align:right;">X</div>
         <div class="chighlight flexcol">
-            <div class="chbigfield flexrow">
-                {{ form.card_name.label }}
-                {{ form.card_name }}
-                <label style="margin-left:20px;"> {{ form.card_complexity.label }} {{ form.card_complexity }}</label>
-            </div>
-            <div class="flexrow chbigfield">
-           {# <label>Responsável: </label><div class="cresp">{{card.c_assigned}}</div>#}
-                <div class="cdeadline">{{ form.card_deadline.label }} {{ form.card_deadline }}</div>
-            </div>
+            {{ form.card_name.label }}
+            {{ form.card_name }}
+            <label style="margin-left:20px;"> {{ form.card_complexity.label }} {{ form.card_complexity }}</label> 
+            {# <label>Responsável: </label><div class="cresp">{{card.c_assigned}}</div>#}
+            <div class="cdeadline">{{ form.card_deadline.label }} {{ form.card_deadline }}</div>
             <div class="chdesc chbigfield">{{ form.card_description.label }} {{form.card_description}}</div>
             <div class="flexrow">
                     <div class="ctopic" style="border:none">{{ form.card_topic.label }}{{ form.card_topic }}</div>
