@@ -1,11 +1,10 @@
+<!-- Deprecated-->
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/betastyles.css' %}">
-
-        <!-- favicon -->
+        <!-- favicons -->
             <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
             <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
             <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
@@ -25,26 +24,55 @@
             <meta name="theme-color" content="#ffffff">
         <!-- favicon end-->
         <script src="{% static 'js/mainscripts.js' %}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-        <script src="{% static 'js/chartkick.js' %}"></script>
-        {% block headcontent %}
-        {% endblock headcontent %}
+        <title>{% block title %}{{ board.b_name }}{% endblock %} | Sprinteam</title>
     </head>
     <body>
     {% csrf_token %}
-        <div class="flexrow">
-            <div class="leftarea flexcol">
-                <div class="topleft">
-                    <!-- Botão de logoff-->
-                    <div class="logoff" onclick=location='{% url "logout" %}'><img src="{% static "images/logoff.png" %}"></div>
+    <div class="wholething">
+        <div class="left">
+            <div class="teamselect">
+                <div class="flexrow">
+                    {% for team in team %}
+                    <div class="teampick">{{ team.t_name|first }}</div>
+                    {% endfor %}
                 </div>
-                {% block leftcontent %}
-                {% endblock leftcontent%}               
             </div>
-            <div class="rightarea flexcol">
-                {% block rightcontent %}
-                {% endblock rightcontent%}
-            </div>        
+            <div class="groupselect flexcol">
+                {% for b in board_list %}
+                <div class="grouppick">{{ b.b_name }}</div>
+                {% endfor %}
+            </div>
+            <div class="fswitchbar">
+                 <!-- Will add the proper switches -->
+            <div class="teampick" onclick="location.href='metrics/metrics.html'"></div>
+            </div>
+
         </div>
+        <div class="right">
+            <div class="topbar">
+                <div class="flexrow">
+                    <div id="bicon" class="bdround">icone da board</div>
+                    <div class="flexcol">
+                        <div class="flexrow">
+                            <div class="bdname">{{ board.b_name }}<label> - {{team.t_name}}</label></div>
+                            <div class="bdsearch">Pesquisar... <img src="{% static 'images\search.png' %}"></div>
+                        </div>
+                        <div class="descbox flexcol">
+                            <div class="desctext">{{board.b_description}}</div>
+                            <div class="desctopics">#{{board.b_topics}}</div>
+                        </div>
+                    </div>
+                    <div id="bscore" class="bdround">{{board.b_points}}</div>
+                </div>
+            </div>
+            <div class="board">
+                {% block categories %}
+                {% endblock categories %}
+                
+                {% block  details %}
+                {% endblock details %}
+            </div>
+        </div>
+    </div>
     </body>
 </html>

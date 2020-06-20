@@ -25,7 +25,7 @@ SECRET_KEY = 'b42ann-fuu8vukmg=qesbojk7pxd&j$p+=s2*#l_ra=vt_6*n*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.15.16', 'localhost']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chartkick'
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sprinteam.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/board/Primeira'
+LOGOUT_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -122,11 +125,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
-
+import chartkick
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "kanban/static")
+    os.path.join(BASE_DIR, "kanban/static"),
+    chartkick.js(),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")

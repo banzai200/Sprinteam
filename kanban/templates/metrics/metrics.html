@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load chartkick %}
+{% load static %}
+{% block headcontent%}
+    <title>Métricas | Sprinteam</title>
+{% endblock headcontent%}
+
+{% block leftcontent %}
+    <div class="sectionpicker flexrow">
+        <div class="section othersection" onclick="location='{% url "kanban" board.b_name%}'"></div>
+        <div class="section"></div>
+    </div>
+    <div class="sectioncontent">
+
+        <div class="bdmarg">
+        {% for b in board_list %}
+                <div class="bdpick bdmarg" onclick=location="{% url 'metrics' b.b_name %}"><img src='{% static b.b_icon %}' height="50" width="50">{{ b.b_name }}</div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock leftcontent %}
+
+{% block rightcontent %}
+    <!-- The Metrics -->
+        <div class="metrics flexrow">
+            <div class="metricsprog flexcol">
+                <span class="metricstitle">Progresso - {{ board.b_name }}</span>
+                <div class="flexrow">
+                    <div class="proggraph">{% pie_chart pie %}</div>
+                    <p class="progtext">Seu time completou {{ number|floatformat:"0" }}% do projeto!<br>
+                        Bom Trabalho, Continue assim!</p>
+                </div>
+            </div>
+            <div class="metricshlcards flexcol">
+                <p>Tarefa menos complexa até agora</p>
+                <div class="card" onclick="location='{% url "detail" board.b_name hardest.id %}'">
+                    <div class="cardfbox"><div class="ctitle">{{ hardest.c_name }}</div><div class="pscore">{{ hardest.c_complexity }}</div></div>
+                    <div class="cdesc">{{ hardest.c_description }}</div>
+                    <div class="cardfbox">
+                        <div class="ctopic">#{{ hardest.c_topic }}</div><div class="cdeadline">{{ hardest.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
+                    </div>           
+                </div>
+                <p>Tarefa mais complexa até agora</p>
+                <div class="card" onclick="location='{% url "detail" board.b_name hardest.id %}'">
+                    <div class="cardfbox"><div class="ctitle">{{ easiest.c_name }}</div><div class="pscore">{{ easiest.c_complexity }}</div></div>
+                    <div class="cdesc">{{ easiest.c_description }}</div>
+                    <div class="cardfbox">
+                        <div class="ctopic">#{{ easiest.c_topic }}</div><div class="cdeadline">{{ easiest.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+{% endblock rightcontent %}

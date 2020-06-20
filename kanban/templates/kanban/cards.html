@@ -2,7 +2,8 @@
 {% extends "kanban/categories.html" %}
 {% block cards %}
     {% for card in lists.cards_set.all %}
-    <div class="card" onclick="showCard()">
+        {% if board.id == card.c_board_id %}
+    <div class="card" draggable="true" onclick="location='{% url "detail" board.b_name card.id %}'">
         <div class="cardfbox">
             <div class="ctitle">{{ card.c_name }}</div>
             <div class="pscore">{{card.c_complexity}}</div>
@@ -12,9 +13,10 @@
             {% for card_user in card.users.all %}
             <div class="cresp">{{card_user.u_name}}</div>
             {% endfor %}
-                <div class="ctopic">{{ card.c_topic }}</div>
-            <div class="cdeadline">{{ card.c_deadline }}</div>
+                <div class="ctopic">#{{ card.c_topic }}</div>
+            <div class="cdeadline">{{ card.c_deadline|date:"SHORT_DATE_FORMAT" }}</div>
         </div>           
     </div>
+        {% endif %}
     {% endfor %}
 {% endblock cards %}

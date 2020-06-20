@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headcontent %}
+    <title>{% block title %}{{ board.b_name }}{% endblock %} | Sprinteam</title>
+{% endblock headcontent %}
+
+{% block leftcontent %}
+    <div class="sectionpicker flexrow">
+        <div class="section"><img src="{% static "images/board.png" %}">Boards</div>
+        <div class="section othersection" onclick=location="{% url "metrics" board.b_name%}"><img src="{% static "images/metrics.png" %}">Metrics</div>
+    </div>
+    <div class="sectioncontent">
+        {% for b in board_list %}
+                <div class="bdpick bdmarg" onclick=location="{% url 'kanban' b.b_name %}"><img src="{% static b.b_icon %}" height="50" width="50">{{ b.b_name }}</div>
+        {% endfor %}
+    </div>
+{% endblock leftcontent %}
+
+{% block rightcontent %}
+    <div class="rightarea">
+        <div class="topbar">
+            <div class="flexrow">
+                <div class="bdicon"><img src="{% static board.b_icon %}" height="85" width="85"></div>
+                <div class="flexcol">
+                    <div class="flexrow">
+                        <div class="bdname">{{ board.b_name }}</div>
+                        <div class="bdsearch">Pesquisar...<img src="{% static "images/search.png" %}">
+                        </div>
+                    </div>
+                    <div class="descbox flexcol">
+                        <div class="desctext">{{board.b_description}}</div>
+                        <div class="desctopics" style="font-size: smaller">#{{board.b_topics}}</div>
+                    </div>
+                </div>
+                <br/>
+                <div class="bdscore">{{ points.c_complexity__sum }} / <br> / {{ complexity.c_complexity__sum }}</div>
+            </div>
+        </div>
+        <div class="board">
+            {% block categories %}
+            {% endblock categories %}
+            
+            {% block  details %}
+            {% endblock details %}
+            <div class="expandmenu expanded flexrow">
+                <div class="expmenubuts" onclick=location="{#% url "new" board.b_name%#}"><img src="{% static "images/add.png" %}"></div>
+                <div class="expmenubuts"><img src="{% static "images/git.png" %}"></div>
+                <div class="expmenubuts"><img src="{% static "images/recolher.png" %}"></div>
+            </div>
+        </div>
+    </div>
+{% endblock rightcontent %}
