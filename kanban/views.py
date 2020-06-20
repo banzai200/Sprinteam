@@ -101,15 +101,17 @@ def Edit(request,  *args, **kwargs):
     if request.method == 'POST':
         form = CardForm(request.POST)
         if form.is_valid():
-            form.save()
+            up = form.save()
+            up.id = card.id
+            up.save()
     else:
-        form = CardForm()
+        form = CardForm(instance=card)
     context = {'team': team, 'board': board, 'list_board': lists, 'board_list': board_list, 'card': card, 'form': form}
     return render(request, 'kanban/edit.html', context)
 
-
+@login_required(login_url='/')
 def CDelete(request,   *args, **kwargs):
     board = get_object_or_404(Boards, b_name=kwargs['name'].capitalize())
     card = get_object_or_404(Cards, pk=kwargs['pk'], )
     Cards.objects.get(id=kwargs['pk']).delete()
-    return HttpResponseRedirect(reverse('kanban:board', kwargs={'board': board.b_name}))
+    return redirect('/board/Primeira')

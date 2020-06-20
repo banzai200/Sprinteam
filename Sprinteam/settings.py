@@ -72,7 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sprinteam.wsgi.application'
 
-LOGIN_REDIRECT_URL = '/boards'
+LOGIN_REDIRECT_URL = '/board/Primeira'
 LOGOUT_REDIRECT_URL = '/'
 
 # Database

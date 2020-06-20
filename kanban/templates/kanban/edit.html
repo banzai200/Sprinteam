@@ -2,6 +2,7 @@
 {% block title %}{{ card.c_name }}{% endblock %}
 {% block details %}
     <form method="POST" action="">
+    {% csrf_token %}
     <div id="cardDetail" class="chighbg flexcol" style="align-items: center;">
         <div onclick="location='{% url "kanban" board.b_name %}'" style="text-align:right;">X</div>
         <div class="chighlight flexcol">
@@ -12,6 +13,9 @@
             <div>Deadline do Card {{ form.c_deadline }}</div>
             <div>Descrição do Card {{form.c_description}}</div>
             <div>Tópico do Card {{ form.c_topic }}</div>
+            {{ form.c_assigned_id.hidden }}
+            {{ form.c_list_id.hidden }}
+            {{ form.c_position.hidden }}
             <button type="submit" class="cadbutton">ATUALIZAR</button>
         </div>
     </div>

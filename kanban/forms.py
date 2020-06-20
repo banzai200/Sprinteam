@@ -18,4 +18,5 @@ class SignUpForm(UserCreationForm):
 class CardForm(ModelForm):
     class Meta:
         model = Cards
-        fields = ('c_name', 'c_complexity', 'c_topic', 'c_deadline', 'c_description',)
+        exclude = ('c_assigned_id', 'c_list_id', 'c_position')
+#        fields = ('c_name', 'c_complexity', 'c_topic', 'c_deadline', 'c_description')
